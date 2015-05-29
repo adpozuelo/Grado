@@ -1,0 +1,809 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# FORMAT per a fer el test:                                         #
+# nomMetode, valorArgument1, valorArgument2, valorArgumentN         #
+# Admet String's, tipus de dades primitius i dates (java.util.Date) #
+# en format dd-MM-yyyy HH:mm:ss                                     #
+# No suporta metodes homonims amb el mateix nombre de parametres    #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# EP2 test
+
+# ERROR
+mostActiveUser()
+ERROR: There are no users
+
+# ERROR
+mostActiveStation()
+ERROR: There are no stations
+
+# ERROR
+stations()
+ERROR: There are no stations
+
+addStation(STATION1, 3, 4, 1000)
+void
+addStation(STATION2, 200, 500, 5)
+void
+addStation(STATION3, 444, 324, 7)
+void
+addStation(STATION4, 111, 322, 8)
+void
+
+stations()
+id: STATION1
+latitude: 3
+longitude: 4
+nParkings: 1000
+bicycles: 0
+
+id: STATION2
+latitude: 200
+longitude: 500
+nParkings: 5
+bicycles: 0
+
+id: STATION3
+latitude: 444
+longitude: 324
+nParkings: 7
+bicycles: 0
+
+id: STATION4
+latitude: 111
+longitude: 322
+nParkings: 8
+bicycles: 0
+
+
+addStation(STATION1, 333, 444, 10)
+void
+
+stations()
+id: STATION1
+latitude: 333
+longitude: 444
+nParkings: 10
+bicycles: 0
+
+id: STATION2
+latitude: 200
+longitude: 500
+nParkings: 5
+bicycles: 0
+
+id: STATION3
+latitude: 444
+longitude: 324
+nParkings: 7
+bicycles: 0
+
+id: STATION4
+latitude: 111
+longitude: 322
+nParkings: 8
+bicycles: 0
+
+
+#ERROR
+bicycles()
+ERROR: There are no bicycles
+
+#ERROR
+bicyclesByStation(STATION1)
+ERROR: There are no bicycles
+
+#ERROR
+addBicycle(B11, M1, XXXX)
+ERROR: Station not found
+
+addBicycle(B11, M1, STATION1)
+void
+
+#ERROR
+addBicycle(B11, M1, STATION1)
+ERROR: Bicycle already exists
+
+addBicycle(B12, M2, STATION1)
+void
+addBicycle(B13, M2, STATION1)
+void
+addBicycle(B14, M1, STATION1)
+void
+addBicycle(B15, M1, STATION1)
+void
+addBicycle(B16, M2, STATION1)
+void
+addBicycle(B17, M2, STATION1)
+void
+addBicycle(B18, M2, STATION1)
+void
+addBicycle(B19, M2, STATION1)
+void
+addBicycle(B100, M2, STATION1)
+void
+
+#ERROR
+addBicycle(B100000, M2, STATION1)
+ERROR: Maximun number of bicycles
+
+bicycles()
+
+id: B100
+model: M2
+time of use: 0 hours
+
+id: B11
+model: M1
+time of use: 0 hours
+
+id: B12
+model: M2
+time of use: 0 hours
+
+id: B13
+model: M2
+time of use: 0 hours
+
+id: B14
+model: M1
+time of use: 0 hours
+
+id: B15
+model: M1
+time of use: 0 hours
+
+id: B16
+model: M2
+time of use: 0 hours
+
+id: B17
+model: M2
+time of use: 0 hours
+
+id: B18
+model: M2
+time of use: 0 hours
+
+id: B19
+model: M2
+time of use: 0 hours
+
+addBicycle(B21, M1, STATION2)
+void
+addBicycle(B22, M2, STATION2)
+void
+addBicycle(B23, M2, STATION2)
+void
+addBicycle(B24, M1, STATION2)
+void
+addBicycle(B25, M1, STATION2)
+void
+
+# ERROR
+addBicycle(B26, M2, STATION2)
+ERROR: Maximun number of bicycles
+
+bicycles()
+
+id: B100
+model: M2
+time of use: 0 hours
+
+id: B11
+model: M1
+time of use: 0 hours
+
+id: B12
+model: M2
+time of use: 0 hours
+
+id: B13
+model: M2
+time of use: 0 hours
+
+id: B14
+model: M1
+time of use: 0 hours
+
+id: B15
+model: M1
+time of use: 0 hours
+
+id: B16
+model: M2
+time of use: 0 hours
+
+id: B17
+model: M2
+time of use: 0 hours
+
+id: B18
+model: M2
+time of use: 0 hours
+
+id: B19
+model: M2
+time of use: 0 hours
+
+id: B21
+model: M1
+time of use: 0 hours
+
+id: B22
+model: M2
+time of use: 0 hours
+
+id: B23
+model: M2
+time of use: 0 hours
+
+id: B24
+model: M1
+time of use: 0 hours
+
+id: B25
+model: M1
+time of use: 0 hours
+
+bicyclesByStation(STATION1)
+id: B18
+model: M2
+time of use: 0 hours
+
+id: B14
+model: M1
+time of use: 0 hours
+
+id: B19
+model: M2
+time of use: 0 hours
+
+id: B12
+model: M2
+time of use: 0 hours
+
+id: B100
+model: M2
+time of use: 0 hours
+
+id: B15
+model: M1
+time of use: 0 hours
+
+id: B11
+model: M1
+time of use: 0 hours
+
+id: B16
+model: M2
+time of use: 0 hours
+
+id: B13
+model: M2
+time of use: 0 hours
+
+id: B17
+model: M2
+time of use: 0 hours
+
+bicyclesByStation(STATION2)
+id: B24
+model: M1
+time of use: 0 hours
+
+id: B22
+model: M2
+time of use: 0 hours
+
+id: B25
+model: M1
+time of use: 0 hours
+
+id: B21
+model: M1
+time of use: 0 hours
+
+id: B23
+model: M2
+time of use: 0 hours
+
+
+# ERROR
+
+users()
+ERROR: There are no users
+
+addUser(1111, Juan)
+void
+addUser(2222, Peter)
+void
+addUser(3333, Sonia)
+void
+addUser(4444, Marc)
+void
+addUser(5555, Joan)
+void
+addUser(6666, Mariano)
+void
+addUser(7777, Sebastià)
+void
+addUser(8888, Josep)
+void
+
+users()
+id: 1111
+name: Juan
+
+id: 2222
+name: Peter
+
+id: 3333
+name: Sonia
+
+id: 4444
+name: Marc
+
+id: 5555
+name: Joan
+
+id: 6666
+name: Mariano
+
+id: 7777
+name: Sebastià
+
+id: 8888
+name: Josep
+
+
+# ERROR
+getBicycle(xxxx, STATION1, 20-10-2013 10:00:00)
+ERROR: User not found
+
+# ERROR
+getBicycle(1111, xxxx, 20-10-2013 10:00:00)
+ERROR: Station not found
+
+getBicycle(1111, STATION1, 20-10-2013 10:00:00)
+id: B11
+model: M1
+time of use: 0 hours
+Running
+
+
+# ERROR
+getBicycle(1111, STATION2, 20-10-2013 11:00:00)
+ERROR: User is busy
+
+# ERROR
+returnBicycle(B11, STATION2, 20-10-2013 10:30:00)
+ERROR: Maximun number of bicycles
+
+returnBicycle(B11, STATION3, 20-10-2013 10:30:00)
+void
+
+bicyclesByStation(STATION1)
+id: B18
+model: M2
+time of use: 0 hours
+
+id: B14
+model: M1
+time of use: 0 hours
+
+id: B19
+model: M2
+time of use: 0 hours
+
+id: B12
+model: M2
+time of use: 0 hours
+
+id: B15
+model: M1
+time of use: 0 hours
+
+id: B100
+model: M2
+time of use: 0 hours
+
+id: B16
+model: M2
+time of use: 0 hours
+
+id: B13
+model: M2
+time of use: 0 hours
+
+id: B17
+model: M2
+time of use: 0 hours
+
+bicyclesByStation(STATION2)
+id: B24
+model: M1
+time of use: 0 hours
+
+id: B22
+model: M2
+time of use: 0 hours
+
+id: B25
+model: M1
+time of use: 0 hours
+
+id: B21
+model: M1
+time of use: 0 hours
+
+id: B23
+model: M2
+time of use: 0 hours
+
+bicyclesByStation(STATION3)
+id: B11
+model: M1
+time of use: 0 hours (timeMilis: 1800000) 
+
+
+getBicycle(1111, STATION2, 21-10-2013 10:00:00)
+id: B21
+model: M1
+time of use: 0 hours
+Running
+
+getBicycle(2222, STATION2, 21-10-2013 10:00:00)
+id: B25
+model: M1
+time of use: 0 hours
+Running
+
+getBicycle(3333, STATION2, 21-10-2013 10:00:00)
+id: B24
+model: M1
+time of use: 0 hours
+Running
+
+getBicycle(4444, STATION2, 21-10-2013 10:00:00)
+id: B23
+model: M2
+time of use: 0 hours
+Running
+
+getBicycle(5555, STATION2, 21-10-2013 10:00:00)
+id: B22
+model: M2
+time of use: 0 hours
+Running
+
+
+# ERROR
+getBicycle(6666, STATION2, 21-10-2013 10:00:00)
+ERROR: There are no bicycles
+
+bicyclesByStation(STATION1)
+id: B18
+model: M2
+time of use: 0 hours
+
+id: B14
+model: M1
+time of use: 0 hours
+
+id: B19
+model: M2
+time of use: 0 hours
+
+id: B12
+model: M2
+time of use: 0 hours
+
+id: B15
+model: M1
+time of use: 0 hours
+
+id: B100
+model: M2
+time of use: 0 hours
+
+id: B16
+model: M2
+time of use: 0 hours
+
+id: B13
+model: M2
+time of use: 0 hours
+
+id: B17
+model: M2
+time of use: 0 hours
+
+
+bicyclesByStation(STATION2)
+ERROR: There are no bicycles
+
+bicyclesByStation(STATION3)
+id: B11
+model: M1
+time of use: 0 hours (timeMilis: 1800000) 
+
+
+returnBicycle(B21, STATION4, 21-10-2013 11:30:00)
+void
+returnBicycle(B22, STATION4, 21-10-2013 12:30:00)
+void
+returnBicycle(B23, STATION4, 21-10-2013 14:30:00)
+void
+returnBicycle(B24, STATION4, 21-10-2013 11:30:00)
+void
+returnBicycle(B25, STATION4, 21-10-2013 11:30:00)
+void
+
+bicyclesByStation(STATION1)
+id: B18
+model: M2
+time of use: 0 hours
+
+id: B14
+model: M1
+time of use: 0 hours
+
+id: B19
+model: M2
+time of use: 0 hours
+
+id: B12
+model: M2
+time of use: 0 hours
+
+id: B15
+model: M1
+time of use: 0 hours
+
+id: B100
+model: M2
+time of use: 0 hours
+
+id: B16
+model: M2
+time of use: 0 hours
+
+id: B13
+model: M2
+time of use: 0 hours
+
+id: B17
+model: M2
+time of use: 0 hours
+
+
+bicyclesByStation(STATION2)
+ERROR: There are no bicycles
+
+bicyclesByStation(STATION3)
+id: B11
+model: M1
+time of use: 0 hours (timeMilis: 1800000) 
+
+
+bicyclesByStation(STATION4)
+id: B21
+model: M1
+time of use: 1 hours (timeMilis: 5400000) 
+
+id: B24
+model: M1
+time of use: 1 hours (timeMilis: 5400000) 
+
+id: B23
+model: M2
+time of use: 4 hours (timeMilis: 16200000) 
+
+id: B25
+model: M1
+time of use: 1 hours (timeMilis: 5400000) 
+
+id: B22
+model: M2
+time of use: 2 hours (timeMilis: 9000000) 
+
+
+# ERROR
+servicesByBicycle(XXX)
+ERROR: Bicycle not found
+
+servicesByBicycle(B11)
+user: Juan (1111) 
+from: STATION1
+to: STATION3
+startTime: 20-10-2013 10:10:00
+endTime: 20-10-2013 10:10:00
+
+
+servicesByBicycle(B22)
+user: Joan (5555) 
+from: STATION2
+to: STATION4
+startTime: 21-10-2013 10:10:00
+endTime: 21-10-2013 12:10:00
+
+
+servicesByBicycle(B23)
+user: Marc (4444) 
+from: STATION2
+to: STATION4
+startTime: 21-10-2013 10:10:00
+endTime: 21-10-2013 02:10:00
+
+
+getBicycle(1111, STATION3, 22-10-2013 10:00:00)
+id: B11
+model: M1
+time of use: 0 hours (timeMilis: 1800000) 
+Running
+
+
+bicyclesByStation(STATION1)
+id: B18
+model: M2
+time of use: 0 hours
+
+id: B14
+model: M1
+time of use: 0 hours
+
+id: B19
+model: M2
+time of use: 0 hours
+
+id: B12
+model: M2
+time of use: 0 hours
+
+id: B15
+model: M1
+time of use: 0 hours
+
+id: B100
+model: M2
+time of use: 0 hours
+
+id: B16
+model: M2
+time of use: 0 hours
+
+id: B13
+model: M2
+time of use: 0 hours
+
+id: B17
+model: M2
+time of use: 0 hours
+
+
+bicyclesByStation(STATION2)
+ERROR: There are no bicycles
+
+bicyclesByStation(STATION3)
+ERROR: There are no bicycles
+
+bicyclesByStation(STATION4)
+id: B21
+model: M1
+time of use: 1 hours (timeMilis: 5400000) 
+
+id: B24
+model: M1
+time of use: 1 hours (timeMilis: 5400000) 
+
+id: B23
+model: M2
+time of use: 4 hours (timeMilis: 16200000) 
+
+id: B25
+model: M1
+time of use: 1 hours (timeMilis: 5400000) 
+
+id: B22
+model: M2
+time of use: 2 hours (timeMilis: 9000000) 
+
+
+returnBicycle(B11, STATION2, 22-10-2013 13:30:00)
+void
+
+bicyclesByStation(STATION1)
+id: B18
+model: M2
+time of use: 0 hours
+
+id: B14
+model: M1
+time of use: 0 hours
+
+id: B19
+model: M2
+time of use: 0 hours
+
+id: B12
+model: M2
+time of use: 0 hours
+
+id: B15
+model: M1
+time of use: 0 hours
+
+id: B100
+model: M2
+time of use: 0 hours
+
+id: B16
+model: M2
+time of use: 0 hours
+
+id: B13
+model: M2
+time of use: 0 hours
+
+id: B17
+model: M2
+time of use: 0 hours
+
+
+bicyclesByStation(STATION2)
+id: B11
+model: M1
+time of use: 4 hours (timeMilis: 14400000) 
+
+
+bicyclesByStation(STATION3)
+ERROR: There are no bicycles
+
+bicyclesByStation(STATION4)
+id: B21
+model: M1
+time of use: 1 hours (timeMilis: 5400000) 
+
+id: B24
+model: M1
+time of use: 1 hours (timeMilis: 5400000) 
+
+id: B23
+model: M2
+time of use: 4 hours (timeMilis: 16200000) 
+
+id: B25
+model: M1
+time of use: 1 hours (timeMilis: 5400000) 
+
+id: B22
+model: M2
+time of use: 2 hours (timeMilis: 9000000) 
+
+
+servicesByBicycle(B11)
+user: Juan (1111) 
+from: STATION1
+to: STATION3
+startTime: 20-10-2013 10:10:00
+endTime: 20-10-2013 10:10:00
+
+user: Juan (1111) 
+from: STATION3
+to: STATION2
+startTime: 22-10-2013 10:10:00
+endTime: 22-10-2013 01:10:00
+
+
+mostActiveUser()
+id: 1111
+name: Juan
+
+
+mostActiveStation()
+id: STATION2
+latitude: 200
+longitude: 500
+nParkings: 5
+bicycles: 1
+

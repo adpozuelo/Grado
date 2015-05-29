@@ -1,0 +1,298 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# FORMAT per a fer el test:                                         #
+# nomMetode, valorArgument1, valorArgument2, valorArgumentN         #
+# Admet String's, tipus de dades primitius i dates (java.util.Date) #
+# en format dd-MM-yyyy HH:mm:ss                                     #
+# No suporta metodes homonims amb el mateix nombre de parametres    #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# PRAC test
+
+# ERROR
+mostActiveUser
+
+# ERROR
+mostActiveStation
+
+# ERROR
+stations
+
+# STATION 1
+addStation, 1, 3, 4, 1000
+
+# STATION 2
+addStation, 2, 200, 500,  5
+
+# STATION 3
+addStation, 3, 444, 324,  7
+
+#STATION 4
+addStation, 4, 111, 322,  8
+
+stations
+
+# STATION 1
+addStation, 1, 333, 444, 10
+
+stations
+
+#ERROR
+bicycles
+
+# ERROR STATION 1
+bicyclesByStation, 1
+
+# ERROR
+addBicycle, B11, M1, 999999
+
+# STATION 1
+addBicycle, B11, M1, 1
+
+#ERROR
+addBicycle, B11, M1, 1
+
+# STATION 1
+
+addBicycle, B12, M2, 1
+addBicycle, B13, M2, 1
+addBicycle, B14, M1, 1
+addBicycle, B15, M1, 1
+addBicycle, B16, M2, 1
+addBicycle, B17, M2, 1
+addBicycle, B18, M2, 1
+addBicycle, B19, M2, 1
+addBicycle, B100, M2, 1
+
+#ERROR
+addBicycle, B100000, M2, 1
+
+bicycles
+
+# STATION 2
+
+addBicycle, B21, M1, 2
+addBicycle, B22, M2, 2
+addBicycle, B23, M2, 2
+addBicycle, B24, M1, 2
+addBicycle, B25, M1, 2
+
+# ERROR
+addBicycle, B26, M2, 2
+
+bicycles
+bicyclesByStation, 1
+bicyclesByStation, 2
+
+# ERROR
+
+users
+
+addUser, 1111, Juan
+addUser, 2222, Peter
+addUser, 3333, Sonia
+addUser, 4444, Marc
+addUser, 5555, Joan
+addUser, 6666, Mariano
+addUser, 7777, Sebastià
+addUser, 8888, Josep
+
+users
+
+# ERROR
+getBicycle, xxxx, 1, 20-10-2013 10:00:00
+
+# ERROR
+getBicycle, 1111, 9999, 20-10-2013 10:00:00
+
+getBicycle, 1111, 1, 20-10-2013 10:00:00
+
+# ERROR
+getBicycle, 1111, 2, 20-10-2013 11:00:00
+
+# ERROR
+returnBicycle, B11, 2, 20-10-2013 10:30:00
+
+returnBicycle, B11, 3, 20-10-2013 10:30:00
+
+bicyclesByStation, 1
+bicyclesByStation, 2
+bicyclesByStation, 3
+
+getBicycle, 1111, 2, 21-10-2013 10:00:00
+getBicycle, 2222, 2, 21-10-2013 10:00:00
+getBicycle, 3333, 2, 21-10-2013 10:00:00
+getBicycle, 4444, 2, 21-10-2013 10:00:00
+getBicycle, 5555, 2, 21-10-2013 10:00:00
+
+# ERROR
+getBicycle, 6666, 2, 21-10-2013 10:00:00
+
+bicyclesByStation, 1
+
+bicyclesByStation, 2
+
+bicyclesByStation, 3
+
+returnBicycle, B21, 4, 21-10-2013 11:30:00
+returnBicycle, B22, 4, 21-10-2013 12:30:00
+returnBicycle, B23, 4, 21-10-2013 14:30:00
+returnBicycle, B24, 4, 21-10-2013 11:30:00
+returnBicycle, B25, 4, 21-10-2013 11:30:00
+
+bicyclesByStation, 1
+
+bicyclesByStation, 2
+
+bicyclesByStation, 3
+
+bicyclesByStation, 4
+
+# ERROR
+servicesByBicycle, XXX
+
+servicesByBicycle, B11
+
+servicesByBicycle, B22
+
+servicesByBicycle, B23
+
+getBicycle, 1111, 3, 22-10-2013 10:00:00
+
+bicyclesByStation, 1
+
+bicyclesByStation, 2
+
+bicyclesByStation, 3
+
+bicyclesByStation, 4
+
+returnBicycle, B11, 2, 22-10-2013 13:30:00
+
+bicyclesByStation, 1
+
+bicyclesByStation, 2
+
+bicyclesByStation, 3
+
+bicyclesByStation, 4
+
+servicesByBicycle, B11
+
+mostActiveUser
+
+mostActiveStation
+
+# ERROR
+mostProblematicStation
+
+# ERROR
+workers
+
+# WORKER 1
+addWorker, 1, Luis
+
+workers
+
+# ERROR
+tickets
+
+# ERROR
+addTicket, B33, First ticket, 27-11-2013 01:30:00
+
+# TICKET 1
+addTicket, B11, First ticket, 27-11-2013 01:30:00
+
+# ERROR
+resolveTicket, 1, solved, 27-11-2013 06:30:00
+
+mostProblematicStation
+
+# ERROR
+assignTicket, 4, 27-11-2013 03:30:00
+
+# TICKET 2
+addTicket, B21, Second ticket, 27-11-2013 02:30:00
+
+tickets
+
+# TICKET 3
+addTicket, B21, Third ticket, 27-11-2013 03:30:00
+
+mostProblematicStation
+
+assignTicket, 1, 27-11-2013 04:30:00
+
+tickets
+
+# WORKER 2
+addWorker, 2, Arlette
+
+assignTicket, 2, 27-11-2013 05:30:00
+
+tickets
+
+# ERROR
+resolveTicket, 4, solved, 27-11-2013 06:30:00
+
+bicyclesByStation, 2
+
+resolveTicket, 1, solved, 27-11-2013 06:30:00
+
+tickets
+
+bicyclesByStation, 2
+
+# ERROR
+ticketsByWorker, 1
+
+ticketsByWorker, 2
+
+# ERROR
+ticketsByBicycle, XXX
+
+# ERROR
+ticketsByBicycle, B23
+
+ticketsByBicycle, B21
+
+# STATION 5
+addStation, 5, 700, 700,  2
+
+# ERROR
+getNBicycles, 10
+
+getNBicycles, 4
+
+# ERROR
+getNParkings, 10
+
+getNParkings, 5
+
+getClosestParking, 701, 701
+
+getClosestBike, 701, 701
+
+addBicycle, B51, M2, 5
+
+addBicycle, B52, M2, 5
+
+getNBicycles, 5
+
+getClosestBike, 701, 701
+
+# ERROR
+getNParkings, 5
+
+# TICKET 4
+addTicket, B51, Four ticket, 27-11-2013 03:30:00
+
+# TICKET 5
+addTicket, B52, Five ticket, 27-11-2013 03:30:00
+
+getClosestBike, 701, 701
+
+assignTicket, 4, 27-11-2013 05:30:00
+
+resolveTicket, 4, solved, 27-11-2013 06:30:00
+
+getClosestBike, 701, 701

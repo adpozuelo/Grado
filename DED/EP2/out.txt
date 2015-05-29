@@ -1,0 +1,398 @@
+# Antonio Diaz Pozuelo - adpozuelo@uoc.edu
+# EP2 test
+
+# ERROR
+addStation(STA1, 3, 4, 1000)
+ERROR: Invalid station id
+
+addStation(STATION1, 3, 4, 1000)
+void
+stations()
+id: STATION1
+latitude: 3
+longitude: 4
+nParkings: 1000
+bicycles: 0
+
+addStation(STATION1, 333, 444, 6)
+void
+stations()
+id: STATION1
+latitude: 333
+longitude: 444
+nParkings: 6
+bicycles: 0
+
+
+#ERROR
+addStation(2, 30, 43, 25)
+ERROR: Invalid station id
+#ERROR
+bicyclesByStation(2)
+ERROR: Invalid station id
+#ERROR
+addStation(STATION2E, 30, 43, 25)
+ERROR: Invalid station id
+
+
+#ERROR
+bicyclesByStation(STATION1)
+ERROR: There are no bicycles
+#ERROR
+addBicycle(B1, M1, STATEOn1)
+ERROR: Station not found
+
+addBicycle(B1, M1, STATIOn1)
+void
+
+#ERROR
+addBicycle(B1, M1, station1)
+ERROR: Bicycle already exists
+
+addBicycle(B2, M2, STATION1)
+void
+addBicycle(B3, M2, STATION1)
+void
+addBicycle(B4, M1, STATION1)
+void
+addBicycle(B5, M1, STATION1)
+void
+addBicycle(B6, M2, STATION1)
+void
+
+#ERROR
+addBicycle(B7, M2, STATION1)
+ERROR: Maximun number of bicycles
+
+addStation(Station2, 33, 11, 2)
+void
+addStation(station3, 12, 90, 3)
+void
+
+stations()
+id: STATION1
+latitude: 333
+longitude: 444
+nParkings: 6
+bicycles: 6
+
+id: STATION2
+latitude: 33
+longitude: 11
+nParkings: 2
+bicycles: 0
+
+id: STATION3
+latitude: 12
+longitude: 90
+nParkings: 3
+bicycles: 0
+
+
+addUser(1, Antonio)
+void
+addUser(2, Juan)
+void
+addUser(3, Pedro)
+void
+
+users()
+id: 1
+name: Antonio
+
+id: 2
+name: Juan
+
+id: 3
+name: Pedro
+
+
+# ERROR
+getBicycle(12, STATION1, 20-10-2013 10:00:00)
+ERROR: User not found
+# ERROR
+getBicycle(EE, STATION1, 20-10-2013 10:00:00)
+ERROR: Invalid user id
+
+getBicycle(1, STATION1, 20-10-2013 10:00:00)
+
+id: B1
+model: M1
+time of use: 0 hours
+Running
+
+
+#ERROR
+getBicycle(2, STATION2, 20-10-2013 10:00:00)
+ERROR: There are no bicycles
+#ERROR
+getBicycle(1, STATION1, 20-10-2013 10:00:00)
+ERROR: User is busy
+
+bicyclesByStation(STATION1)
+
+id: B2
+model: M2
+time of use: 0 hours
+
+
+id: B3
+model: M2
+time of use: 0 hours
+
+
+id: B4
+model: M1
+time of use: 0 hours
+
+
+id: B5
+model: M1
+time of use: 0 hours
+
+
+id: B6
+model: M2
+time of use: 0 hours
+
+
+#ERROR
+bicyclesByStation(STATION2)
+ERROR: There are no bicycles
+#ERROR
+bicyclesByStation(STATION3)
+ERROR: There are no bicycles
+
+getBicycle(2, STATION1, 20-10-2013 10:30:00)
+
+id: B2
+model: M2
+time of use: 0 hours
+Running
+
+
+returnBicycle(B1, STATION3, 21-10-2013 18:30:00)
+void
+returnBicycle(B2, STATION3, 21-10-2013 12:30:00)
+void
+
+bicyclesByStation(STATION2)
+ERROR: There are no bicycles
+bicyclesByStation(STATION3)
+
+id: B1
+model: M1
+time of use: 32 hours (timeMilis: 117000000)
+
+
+id: B2
+model: M2
+time of use: 26 hours (timeMilis: 93600000)
+
+
+getBicycle(2, STATION3, 22-10-2013 12:30:00)
+
+id: B2
+model: M2
+time of use: 26 hours (timeMilis: 93600000)
+Running
+
+getBicycle(3, STATION3, 22-10-2013 15:30:00)
+
+id: B1
+model: M1
+time of use: 32 hours (timeMilis: 117000000)
+Running
+
+
+#ERROR
+getBicycle(1, STATION3, 22-10-2013 20:30:00)
+ERROR: There are no bicycles
+
+getBicycle(1, STATION1, 22-10-2013 22:30:00)
+
+id: B3
+model: M2
+time of use: 0 hours
+Running
+
+
+returnBicycle(B1, STATION2, 23-10-2013 18:30:00)
+void
+returnBicycle(B2, STATION2, 23-10-2013 19:30:00)
+void
+
+#ERROR
+returnBicycle(B3, STATION2, 23-10-2013 20:30:00)
+ERROR: Maximun number of bicycles
+
+returnBicycle(B3, STATION3, 23-10-2013 20:30:00)
+void
+stations()
+id: STATION1
+latitude: 333
+longitude: 444
+nParkings: 6
+bicycles: 3
+
+id: STATION2
+latitude: 33
+longitude: 11
+nParkings: 2
+bicycles: 2
+
+id: STATION3
+latitude: 12
+longitude: 90
+nParkings: 3
+bicycles: 1
+
+bicyclesByStation(STATION1)
+
+id: B4
+model: M1
+time of use: 0 hours
+
+
+id: B5
+model: M1
+time of use: 0 hours
+
+
+id: B6
+model: M2
+time of use: 0 hours
+
+bicyclesByStation(STATION2)
+
+id: B1
+model: M1
+time of use: 59 hours (timeMilis: 214200000)
+
+
+id: B2
+model: M2
+time of use: 57 hours (timeMilis: 205200000)
+
+bicyclesByStation(STATION3)
+
+id: B3
+model: M2
+time of use: 22 hours (timeMilis: 79200000)
+
+
+getBicycle(1, STATION2, 23-10-2013 22:30:00)
+
+id: B2
+model: M2
+time of use: 57 hours (timeMilis: 205200000)
+Running
+
+returnBicycle(B2, STATION3, 24-10-2013 10:30:00)
+void
+
+bicyclesByStation(STATION1)
+
+id: B4
+model: M1
+time of use: 0 hours
+
+
+id: B5
+model: M1
+time of use: 0 hours
+
+
+id: B6
+model: M2
+time of use: 0 hours
+
+bicyclesByStation(STATION2)
+
+id: B1
+model: M1
+time of use: 59 hours (timeMilis: 214200000)
+
+bicyclesByStation(STATION3)
+
+id: B3
+model: M2
+time of use: 22 hours (timeMilis: 79200000)
+
+
+id: B2
+model: M2
+time of use: 69 hours (timeMilis: 248400000)
+
+servicesByBicycle(B1)
+
+user: Antonio (1)
+from: STATION1
+to: STATION3
+startTime: 20-10-2013 10:00:00
+endTime: 21-10-2013 18:30:00
+
+
+user: Pedro (3)
+from: STATION3
+to: STATION2
+startTime: 22-10-2013 15:30:00
+endTime: 23-10-2013 18:30:00
+
+servicesByBicycle(B2)
+
+user: Juan (2)
+from: STATION1
+to: STATION3
+startTime: 20-10-2013 10:30:00
+endTime: 21-10-2013 12:30:00
+
+
+user: Juan (2)
+from: STATION3
+to: STATION2
+startTime: 22-10-2013 12:30:00
+endTime: 23-10-2013 19:30:00
+
+
+user: Antonio (1)
+from: STATION2
+to: STATION3
+startTime: 23-10-2013 22:30:00
+endTime: 24-10-2013 10:30:00
+
+servicesByBicycle(B3)
+
+user: Antonio (1)
+from: STATION1
+to: STATION3
+startTime: 22-10-2013 22:30:00
+endTime: 23-10-2013 20:30:00
+
+mostActiveUser()
+id: 1
+name: Antonio
+
+mostActiveStation()
+id: STATION1
+latitude: 333
+longitude: 444
+nParkings: 6
+bicycles: 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

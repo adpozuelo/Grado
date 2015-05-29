@@ -1,0 +1,19 @@
+EP2 - DED - UOC
+Antonio Díaz Pozuelo - adpozuelo@uoc.edu
+
+El alcance de la entrega es el 100% de los requisitos solicitados en el enunciado.
+No he implementado la cola con prioridad para las bicicletas aparcadas en una estación, he utilizado una lista enlazada como se describe en la solución oficial de la PEC1.
+Asimismo, he implementado todas las estructuras de datos especificada en la solucion oficial de la PEC1.
+He especificado e implementado dos tipos de vectores, uno con ordenación y otro sin ella. En las interfaces de dichos vectores sólo he implementado la interfaz "ContenedorAcotado". Los dos vectores trabajan con tipos paramétricos.
+El vector con ordenación realiza dicha ordenacion en insercion y ejecuta las búsquedas dicotómicas utilizando la clase estática Arrays de la JDK y su método estáticos binnarysearch. Dichos TADs se encuentran en un paquete adp_tads dentro del paquete de la EP.
+Sobre el conjunto de pruebas entregada con la EP, mi salida (out1.txt) es ligeramente diferente a hopedOut1.txt debido a que las bicicletas siempre están ordenadas, de modo que las primeras entregas de bicicletas (cuando ninguna bicicleta ha hecho ningún servicio) son diferentes, por lo que la salida no es igual. Se puede comprobar, sin embargo, que los tiempos de utilización sí son los mismos aunque los identificadores de bicicletas sean diferentes. Imagino que esto es debido a que en la implementación sobre la que trabaja el equipo docente utiliza una cola con prioridad.
+He trabajado sobre el conjunto de pruebas que entrega los identificadores como strings de modo que he tenido que implementar una serie de comprobaciones para el caso de identificadores inválidos por no cumplir el formato de entrada.
+En este caso, la excepción que he decidido lanzar imprime "Invalid (user/station) id" en vez de una excepción diciendo que no encuentra el elemento concreto. Quiza se podría afinar este aspecto un poco más en el caso de los usuarios pero no creo sea el objeto de esta EP.
+He generado un juego de pruebas (in.txt y out.txt) centrandome en el control de los identificadores (ya que he realizado dicha implementación), en el control de los errores básicos (no quería redundar mucho en este tema ya que las pruebas oficiales ya lo hacen), en el control de la entrega de la bicicleta con menos uso (he realizado dos peticiones comprobando este aspecto) y en la gestión de las recogidas y entregas en otras estaciones. No he querido redundar en comprobaciones ya hechas en las pruebas oficiales y tampoco he querido crear grandes conjuntos de datos con salidas muy extensas.
+Todas las ejecuciones realizas mediante este conjunto de pruebas han sido satisfactorias como se puede comprobar en el fichero out.txt.
+No he añadido javadoc sobre la implementación de la clase controladora BicingManagerImpl dado que ya está en su interfaz. He seguido el mismo procedimiento para las estructuras de datos implementadas por mi. Sin embargo, y aunque en algunos casos sea evidente lo que hago, he añadido comentarios a todas las líneas de código con el objeto de hacer más entendible mi implementación.
+Finalmente, en las clases que representan objetos que implementan o pueden implementar programación defensiva he hecho un uso completo de getters y setters. Sin embargo, en las estructuras de datos implementadas por mi (los dos vectores), no he utilizado dicho estilo de programación con el objeto de obtener una mayor eficiencia en las operaciones.
+
+** Importante **
+He utilizado el IDE Eclipse para realizar esta EP.
+Del proyecto adjunto la carpeta "src" completa, los juegos de pruebas (tanto el oficial, con mi salida, como el mio y su salida) y este fichero leeme.

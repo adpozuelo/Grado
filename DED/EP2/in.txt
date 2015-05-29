@@ -1,0 +1,123 @@
+# Antonio Diaz Pozuelo - adpozuelo@uoc.edu
+# EP2 test
+
+# ERROR
+addStation, STA1, 3, 4, 1000
+
+addStation, STATION1, 3, 4, 1000
+stations
+addStation, STATION1, 333, 444, 6
+stations
+
+#ERROR
+addStation, 2, 30, 43, 25
+#ERROR
+bicyclesByStation, 2
+#ERROR
+addStation, STATION2E, 30, 43, 25
+
+
+#ERROR
+bicyclesByStation, STATION1
+#ERROR
+addBicycle, B1, M1, STATEOn1
+
+addBicycle, B1, M1, STATIOn1
+
+#ERROR
+addBicycle, B1, M1, station1
+
+addBicycle, B2, M2, STATION1
+addBicycle, B3, M2, STATION1
+addBicycle, B4, M1, STATION1
+addBicycle, B5, M1, STATION1
+addBicycle, B6, M2, STATION1
+
+#ERROR
+addBicycle, B7, M2, STATION1
+
+addStation, Station2, 33, 11, 2
+addStation, station3, 12, 90, 3
+
+stations
+
+addUser, 1, Antonio
+addUser, 2, Juan
+addUser, 3, Pedro
+
+users
+
+# ERROR
+getBicycle, 12, STATION1, 20-10-2013 10:00:00
+# ERROR
+getBicycle, EE, STATION1, 20-10-2013 10:00:00
+
+getBicycle, 1, STATION1, 20-10-2013 10:00:00
+
+#ERROR
+getBicycle, 2, STATION2, 20-10-2013 10:00:00
+#ERROR
+getBicycle, 1, STATION1, 20-10-2013 10:00:00
+
+bicyclesByStation, STATION1
+
+#ERROR
+bicyclesByStation, STATION2
+#ERROR
+bicyclesByStation, STATION3
+
+getBicycle, 2, STATION1, 20-10-2013 10:30:00
+
+returnBicycle, B1, STATION3, 21-10-2013 18:30:00
+returnBicycle, B2, STATION3, 21-10-2013 12:30:00
+
+bicyclesByStation, STATION2
+bicyclesByStation, STATION3
+
+getBicycle, 2, STATION3, 22-10-2013 12:30:00
+getBicycle, 3, STATION3, 22-10-2013 15:30:00
+
+#ERROR
+getBicycle, 1, STATION3, 22-10-2013 20:30:00
+
+getBicycle, 1, STATION1, 22-10-2013 22:30:00
+
+returnBicycle, B1, STATION2, 23-10-2013 18:30:00
+returnBicycle, B2, STATION2, 23-10-2013 19:30:00
+
+#ERROR
+returnBicycle, B3, STATION2, 23-10-2013 20:30:00
+
+returnBicycle, B3, STATION3, 23-10-2013 20:30:00
+stations
+bicyclesByStation, STATION1
+bicyclesByStation, STATION2
+bicyclesByStation, STATION3
+
+getBicycle, 1, STATION2, 23-10-2013 22:30:00
+returnBicycle, B2, STATION3, 24-10-2013 10:30:00
+
+bicyclesByStation, STATION1
+bicyclesByStation, STATION2
+bicyclesByStation, STATION3
+servicesByBicycle, B1
+servicesByBicycle, B2
+servicesByBicycle, B3
+mostActiveUser
+mostActiveStation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

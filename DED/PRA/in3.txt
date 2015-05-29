@@ -1,0 +1,195 @@
+Antonio Díaz Pozuelo
+adpozuelo@uoc.edu
+
+# Juego de pruebas PRA
+
+##### Bloque EP2 solucion oficial - carga de datos ######
+# ERROR
+mostActiveUser
+# ERROR
+mostActiveStation
+# ERROR
+stations
+# STATION 1
+addStation, 1, 3, 4, 1000
+# STATION 2
+addStation, 2, 200, 500,  5
+# STATION 3
+addStation, 3, 444, 324,  7
+#STATION 4
+addStation, 4, 111, 322,  8
+stations
+# STATION 1
+addStation, 1, 333, 444, 10
+stations
+#ERROR
+bicycles
+# ERROR STATION 1
+bicyclesByStation, 1
+# ERROR
+addBicycle, B11, M1, 999999
+# STATION 1
+addBicycle, B11, M1, 1
+#ERROR
+addBicycle, B11, M1, 1
+# STATION 1
+addBicycle, B12, M2, 1
+addBicycle, B13, M2, 1
+addBicycle, B14, M1, 1
+addBicycle, B15, M1, 1
+addBicycle, B16, M2, 1
+addBicycle, B17, M2, 1
+addBicycle, B18, M2, 1
+addBicycle, B19, M2, 1
+addBicycle, B100, M2, 1
+#ERROR
+addBicycle, B100000, M2, 1
+bicycles
+# STATION 2
+addBicycle, B21, M1, 2
+addBicycle, B22, M2, 2
+addBicycle, B23, M2, 2
+addBicycle, B24, M1, 2
+addBicycle, B25, M1, 2
+# ERROR
+addBicycle, B26, M2, 2
+bicycles
+bicyclesByStation, 1
+bicyclesByStation, 2
+# ERROR
+users
+addUser, 1111, Juan
+addUser, 2222, Peter
+addUser, 3333, Sonia
+addUser, 4444, Marc
+addUser, 5555, Joan
+addUser, 6666, Mariano
+addUser, 7777, Sebastià
+addUser, 8888, Josep
+users
+# ERROR
+getBicycle, xxxx, 1, 20-10-2013 10:00:00
+# ERROR
+getBicycle, 1111, 9999, 20-10-2013 10:00:00
+getBicycle, 1111, 1, 20-10-2013 10:00:00
+# ERROR
+getBicycle, 1111, 2, 20-10-2013 11:00:00
+# ERROR
+returnBicycle, B11, 2, 20-10-2013 10:30:00
+returnBicycle, B11, 3, 20-10-2013 10:30:00
+bicyclesByStation, 1
+bicyclesByStation, 2
+bicyclesByStation, 3
+getBicycle, 1111, 2, 21-10-2013 10:00:00
+getBicycle, 2222, 2, 21-10-2013 10:00:00
+getBicycle, 3333, 2, 21-10-2013 10:00:00
+getBicycle, 4444, 2, 21-10-2013 10:00:00
+getBicycle, 5555, 2, 21-10-2013 10:00:00
+# ERROR
+getBicycle, 6666, 2, 21-10-2013 10:00:00
+bicyclesByStation, 1
+bicyclesByStation, 2
+bicyclesByStation, 3
+returnBicycle, B21, 4, 21-10-2013 11:30:00
+returnBicycle, B22, 4, 21-10-2013 12:30:00
+returnBicycle, B23, 4, 21-10-2013 14:30:00
+returnBicycle, B24, 4, 21-10-2013 11:30:00
+returnBicycle, B25, 4, 21-10-2013 11:30:00
+bicyclesByStation, 1
+bicyclesByStation, 2
+bicyclesByStation, 3
+bicyclesByStation, 4
+# ERROR
+servicesByBicycle, XXX
+servicesByBicycle, B11
+servicesByBicycle, B22
+servicesByBicycle, B23
+getBicycle, 1111, 3, 22-10-2013 10:00:00
+bicyclesByStation, 1
+bicyclesByStation, 2
+bicyclesByStation, 3
+bicyclesByStation, 4
+returnBicycle, B11, 2, 22-10-2013 13:30:00
+bicyclesByStation, 1
+bicyclesByStation, 2
+bicyclesByStation, 3
+bicyclesByStation, 4
+servicesByBicycle, B11
+mostActiveUser
+mostActiveStation
+##### Bloque EP2 solucion oficial - Final ######
+
+##### Bloque PRA ######
+
+# STATION 5 # Muevo bicicletas a la estacion nueva
+addStation, 5, 700, 700,  5
+getBicycle, 1111, 4, 26-11-2013 10:00:00
+getBicycle, 2222, 4, 26-11-2013 11:00:00
+getBicycle, 3333, 4, 26-11-2013 12:00:00
+getBicycle, 4444, 4, 26-11-2013 13:00:00
+getBicycle, 5555, 4, 26-11-2013 14:00:00
+returnBicycle, B21, 5, 26-11-2013 15:30:00
+returnBicycle, B22, 5, 26-11-2013 16:30:00
+returnBicycle, B23, 5, 26-11-2013 17:30:00
+returnBicycle, B24, 5, 26-11-2013 18:30:00
+returnBicycle, B25, 5, 26-11-2013 19:30:00
+bicyclesByStation, 5
+# Bloque operarios
+# WORKER 1
+addWorker, 1, Antonio
+workers
+# NO CHANGES
+addWorker, 2, Juan
+workers
+
+# Bloque incidencias
+
+# Compruebo que la estacion mas problematica cambia
+# TICKET 1
+addTicket, B12, Horquilla rota, 27-11-2013 09:00:00
+mostProblematicStation
+# TICKET 2
+addTicket, B21, Pedal roto, 27-11-2013 10:00:00
+# TICKET 3
+addTicket, B22,  Rueda pinchada, 27-11-2013 11:00:00
+mostProblematicStation
+# TICKET 4
+addTicket, B23, Frenos rotos , 27-11-2013 12:00:00
+# TICKET 5
+addTicket, B24, Luz rota, 27-11-2013 13:00:00
+tickets
+
+# Compruebo el funcionamiento de la cola con prioridad
+assignTicket, 1, 27-11-2013 10:00:00
+assignTicket, 2, 27-11-2013 11:00:00
+assignTicket, 3, 27-11-2013 12:00:00
+assignTicket, 4, 27-11-2013 13:00:00
+addWorker, 3, Raquel
+assignTicket, 5, 27-11-2013 14:00:00
+tickets
+bicyclesByStation, 5
+
+# Resolucion de incidencias
+resolveTicket, 2, solved, 27-11-2013 12:30:00
+resolveTicket, 3, solved, 27-11-2013 13:30:00
+tickets
+bicyclesByStation, 5
+ticketsByWorker, 1
+ticketsByWorker, 2
+ticketsByWorker, 3
+ticketsByBicycle, B21
+ticketsByBicycle, B22
+
+# Estaciones mas cercanas, compruebo el metodo getClosestParking cuando la estacion mas
+# cercana no tiene plazas de parking ya que en el juego de pruebas original no se hace
+getNBicycles, 5
+getNParkings, 5
+getClosestParking, 701, 701
+getClosestBike, 701, 701
+addBicycle, B51, M2, 5
+addBicycle, B52, M2, 5
+getNBicycles, 5
+getNParkings, 5
+getClosestParking, 701, 701
+
+##### Bloque PRA - Final ######

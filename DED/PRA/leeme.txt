@@ -1,0 +1,12 @@
+PRA - DED - UOC
+Antonio Díaz Pozuelo - adpozuelo@uoc.edu
+
+El alcance de la entrega es el 100% de los requisitos solicitados en el enunciado.
+Todas las estructuras de datos son las especificadas en la solución oficial de la PEC2.
+En la clase Station he añadido una nueva estructura de lista para implementar una doble lista de bicicletas de la estación. En una lista (la que ya existía) se gestionan las bicicletas aparcadas y en servicio de la estación. En la otra lista (la nueva) se gestionan las bicicletas aparcadas y averiadas de la estación. Además, he añadido los métodos que permiten mover una bicicleta de una estructura a la otra. He implementado esta gestión basada en doble lista dado que el coste asintótico temporal de todos los métodos se mantiene O(n) siendo n el número de bicicletas (en servicio y averiadas) de la estación. El coste asintótico espacial tambien se mantiene ya que las dos estructuras son iguales y el número total de bicicletas no se duplica, ya que se mueven bicicletas de una estructura a la otra. Otra ventaja de esta implementación es que el método para obtener un iterador de bicicletas averiadas es realmente sencillo.
+La unica diferencia entre mi salida y la oficial se refiere al orden en que los iteradores recorren los elementos de las listas. Sin embargo, y aunque el orden es distinto, son los mismos elementos que en la salida oficial.
+En el juego de pruebas hecho por mí he cargado la parte original de la EP2 con el objeto de tener datos válidos y conocidos en el sistema. Después, he comprobado funcionalidades intentando repetir lo menos posible las comprobaciones del juego de pruebas original. He definido las comprobaciones en el fichero del juego de pruebas -in3.txt-.
+
+** Importante **
+He utilizado el IDE Eclipse para realizar esta PRA.
+Del proyecto adjunto la carpeta "src" completa, los juegos de pruebas: tanto el oficial (-in2.txt- con mi salida -out2.txt-) como el mio -in3.txt- y este fichero leeme.txt.
