@@ -5,6 +5,12 @@ bin/
 build/
 dist/
 
+# Temporal files
+*~
+
+# Project files
+.project
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
