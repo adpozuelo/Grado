@@ -1,4 +1,7 @@
+# Binary files
 *.class
+*.o
+*.a
 
 # Bin/Build/Dist directories
 bin/
