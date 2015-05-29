@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<f:metadata>
+	<f:viewParam name="idEvent" value="#{eventshow.idEvent}" />
+</f:metadata>
+<ui:composition template="/headerView.xhtml">
+	<ui:define name="content">
+		<h:outputStylesheet>
+				
+				#liEvents{
+					color:#3A5795;
+					background-color: #DF7401;
+					width:85% !important;
+				}
+			</h:outputStylesheet>
+		<h:form>
+			<div align="center" style="text-align: center;">
+				<div align="center" class="div_insert">
+					<table id="table1" class="table_insert">
+						<tr>
+							<td colspan="2"><br /> <br /> <br />&nbsp; &nbsp; &nbsp;
+								<center>Add comments to the Event.</center> <br />
+								<center>(minimum of '1' and maximum of '255'
+									characters)</center></td>
+						</tr>
+						<tr>
+							<td width="125" style="padding: 10px"><b>Comment:</b></td>
+							<td style="padding: 10px"><br /> <br /> <br /> <br /> <br />
+								<br /> <br /> <h:inputTextarea id="comment"
+									value="#{sendcomment.comment}" rows="10" cols="51" size="255"
+									validator="#{sendcomment.validate}">
+								</h:inputTextarea></td>
+						</tr>
+						<tr>
+							<td colspan="2" style="padding: 20px"><b><h:message
+										for="comment" style="color:red" /></b></td>
+						</tr>
+					</table>
+
+					<p align="center">
+						<h:commandButton value="Accept"
+							action="#{sendcomment.start(eventshow.idEvent, sendcomment.comment)}"
+							class="button_submit" />
+						&nbsp;&nbsp;
+						<h:commandButton value="Reset" action="#{sendcomment.clear}"
+							class="button_submit" />
+					</p>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

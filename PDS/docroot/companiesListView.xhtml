@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+			<h:outputStylesheet>
+				
+				#liCompanies{
+					color:#3A5795;
+					background-color: #DF7401;
+					width:85% !important;
+				}
+			</h:outputStylesheet>
+		<h:form>
+	 		<div align="center" class="div_container">
+	 			
+				<h:dataTable value="#{listcompanies.companyList}" var="item" border="0" first="0"  class="table_list_view" frame="hsides" rules="all"  >
+		
+		 			<h:column>
+		   				<f:facet name="header">
+		   					<h:outputText value="name"/>
+		   				</f:facet> 
+		     			<h:outputText value="#{item.name}" />
+		 			</h:column>
+					<h:column headerClass="td_button">
+						<f:facet name="header">
+		   					<h:outputText value="Detail"/>
+		   				</f:facet>			
+						<h:link outcome="companyDetailView" >
+						<img src="#{resource['images:Detail.png']}" alt="View detail"/>
+							<f:param name="idCompany" value="#{item.id}" />						
+						</h:link>		
+		 			</h:column>
+		 			<h:column headerClass="td_button">	
+		 				<f:facet name="header">
+		   					<h:outputText value="Edit" rendered='#{login.isUserAdmin()}'/>
+		   				</f:facet>
+						<h:link outcome="/admin/modifyCompanyView" rendered='#{login.isUserAdmin()}' >
+							<img src="#{resource['images:Edit.png']}" alt="Modify" />
+							<f:param name="idCompany" value="#{item.id}" />				
+						</h:link>	
+ 					</h:column>
+		 		</h:dataTable>
+		 	</div>
+	 		<br>
+	 		</br>
+	 		
+	 		<div class="div_addButton">
+		 		<h:link outcome="/admin/addCompanyView" value="Add new company"  rendered='#{login.isUserAdmin()}' >
+					<img src="#{resource['images:Add.png']}"  alt="Add" />
+				</h:link>
+			</div>
+		 	
+		 </h:form>
+	</ui:define>
+</ui:composition>
+</html>

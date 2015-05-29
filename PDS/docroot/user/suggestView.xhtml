@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<f:metadata>
+	<f:viewParam name="idEvent" value="#{eventshow.idEvent}" />
+</f:metadata>
+<ui:composition template="/headerView.xhtml">
+	<ui:define name="content">
+		<h:outputStylesheet>
+				
+				#liEvents{
+					color:#3A5795;
+					background-color: #DF7401;
+					width:85% !important;
+				}
+			</h:outputStylesheet>
+		<h:form>
+			<div align="center" class="div_insert">
+				<table width="50%" id="table1">
+					<tr>
+						<td width="155">
+							<p align="left" /> <b>Send to:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText id="mail" size="22"
+								value="#{suggest.mail}" validator="#{suggest.validate}" />
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="padding: 20px"><center>
+								<b><h:message for="mail" style="color:red" /></b>
+							</center></td>
+					</tr>
+				</table>
+				<p align="center">
+					<h:commandButton value="Accept"
+						action="#{suggest.start(eventshow.idEvent, suggest.mail)}" />
+				</p>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

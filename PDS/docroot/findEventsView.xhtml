@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<h:outputStylesheet>
+				
+				#liFindEvents{
+					color:#3A5795;
+					background-color: #DF7401;
+					width:85% !important;
+				}
+			</h:outputStylesheet>
+		<h:form>
+			<div align="center" class="div_insert">
+				<table width="50%" id="table1">
+					<tr>
+						<td width="155">
+							<p align="left" /> <b>Find by name:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText id="name" size="22"
+								value="#{findeventsbyname.name}"
+								validator="#{findeventsbyname.validate}" />
+						</td>
+
+					</tr>
+					<tr>
+						<td colspan="2" style="padding: 20px"><center>
+								<b><h:message for="name" style="color:red" /></b>
+							</center></td>
+					</tr>
+				</table>
+				<p align="center">
+					<h:commandButton value="Accept"
+						action="#{findeventsbyname.start(findeventsbyname.name)}" />
+				</p>
+			</div>
+		</h:form>
+		<br />
+		<br />
+		<br />
+		<h:form>
+			<div align="center" class="div_insert">
+				<table width="50%" id="table2">
+					<tr>
+						<td>
+							<p align="left" /> <b>Find by category:</b>
+						</td>
+						<td><h:selectOneMenu value="#{listcategories.name}" style="margin-top:20px;margin-left:-60px;"
+								id="cmbCategories" immediate="true" required="true"
+								requiredMessage="you must choose a category">
+								<f:selectItems value="#{listcategories.categoryListItems}" />
+							</h:selectOneMenu> <h:message for="cmbCategories" styleClass="controlErrors"
+								style="color:red;" /></td>
+					</tr>
+					<tr>
+						<td colspan="2" style="padding: 20px"><center>
+								<b><h:message for="category" style="color:red" /></b>
+							</center></td>
+					</tr>
+				</table>
+				<p align="center">
+					<h:commandButton value="Accept"
+						action="#{findeventsbycategory.start(listcategories.name)}" />
+				</p>
+			</div>
+		</h:form>
+		<br />
+		<br />
+		<br />
+		<h:form>
+			<div align="center" class="div_insert">
+				<table width="50%" id="table1">
+					<tr>
+						<td width="155">
+							<p align="left" /> <b>Find by keyword:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText id="name" size="22"
+								value="#{findeventsbyword.keywords}"
+								validator="#{findeventsbyword.validate}" />
+						</td>
+
+					</tr>
+					<tr>
+						<td colspan="2" style="padding: 20px"><center>
+								<b><h:message for="name" style="color:red" /></b>
+							</center></td>
+					</tr>
+				</table>
+				<p align="center">
+					<h:commandButton value="Accept"
+						action="#{findeventsbyword.start(findeventsbyword.keywords)}" />
+				</p>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

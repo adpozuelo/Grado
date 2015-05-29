@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+   <f:metadata>
+      <f:viewParam name="idCompany" value="#{companyshow.idCompany}"/>
+   </f:metadata>
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+			<h:outputStylesheet>
+				
+				#liCompanies{
+					color:#3A5795;
+					background-color: #DF7401;
+					width:85% !important;
+				}
+			</h:outputStylesheet>	
+		<div class="div_detail">
+			<table border="1" width="50%" id="table1">
+
+				<tr>
+					<td width="155">
+						<p align="left"/><b><font size="3">Name:</font></b>
+					</td>
+					<td>
+						<p align="left"/><h:outputText value="#{companyshow.dataCompany.name}" />
+					</td>
+				</tr>
+				<tr>
+					<td width="155">
+						<p align="left"/><b><font size="3">Admin:</font></b>
+					</td>
+					<td>
+						<p align="left"/><h:outputText value="#{companyshow.dataCompany.superuser.name} #{companyshow.dataCompany.superuser.surname}" />
+						
+					</td>
+				</tr>
+
+			</table>
+		</div>		 	
+		<br></br>
+			<div class="div_addButton">
+		 	<h:link outcome="/admin/modifyCompanyView" value="Modify company" rendered='#{login.isUserAdmin()}' >
+		 	<img src="#{resource['images:Edit.png']}"  alt="Edit" />
+		 		<f:param name="idCompany" value="#{companyshow.dataCompany.id}" />
+		 	</h:link>
+	 	</div>
+		 
+	</ui:define>
+</ui:composition>
+</html>

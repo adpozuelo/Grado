@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<f:metadata>
+	<f:viewParam name="idEvent" value="#{findeventsbyword.idEvent}" />
+</f:metadata>
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<h:outputStylesheet>
+				
+				#liEvents{
+					color:#3A5795;
+					background-color: #DF7401;
+					width:85% !important;
+				}
+			</h:outputStylesheet>
+		<h:form enctype="multipart/form-data">
+			<div class="div_detail" style="height: 580px;">
+
+				<div class="detail_event">
+					<table border="1" width="70%" id="table1">
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3">Name:</font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText
+									value="#{findeventsbyword.dataEvent.name}" />
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3">Description:</font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText
+									value="#{findeventsbyword.dataEvent.description}" />
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3">Keywords:</font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText value="#{findeventsbyword.keywords}" />
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3">Init date:</font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText
+									value="#{findeventsbyword.dataEvent.initDate.getTime()}">
+									<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+								</h:outputText>
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3">End date:</font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText
+									value="#{findeventsbyword.dataEvent.endDate.getTime()}">
+									<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+								</h:outputText>
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3">Street:</font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText
+									value="#{findeventsbyword.dataEvent.address.street}" />
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3">City:</font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText
+									value="#{findeventsbyword.dataEvent.address.city}" />
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3">Country:</font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText
+									value="#{findeventsbyword.dataEvent.address.country}" />
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3">State:</font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText
+									value="#{findeventsbyword.dataEvent.address.state}" />
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3">Zipcode:</font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText
+									value="#{findeventsbyword.dataEvent.address.zipCode}" />
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3">Country:</font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText
+									value="#{findeventsbyword.dataEvent.address.country}" />
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3">Company:</font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText
+									value="#{findeventsbyword.dataEvent.company.getName()}" />
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3"><h:outputText
+											value="Admin
+									user:"
+											rendered="#{login.isUserAdmin()}"></h:outputText></font></b>
+							</td>
+							<td>
+								<p align="left" /> <h:outputText
+									value="#{findeventsbyword.dataEvent.superuser.email}"
+									rendered="#{login.isUserAdmin()}"></h:outputText>
+							</td>
+						</tr>
+						<tr>
+							<td width="155">
+								<p align="left" /> <b><font size="3"><h:outputText
+											value="Rating:"></h:outputText></font></b>
+							</td>
+							<td>
+
+								<div class="detail_event_ratting" id="panelrattingsByWord">
+									<img src="#{resource['images:favorite.png']}" id="rat1" />
+									<img src="#{resource['images:favorite.png']}" id="rat2" />
+									<img src="#{resource['images:favorite.png']}" id="rat3" />
+									<img src="#{resource['images:favorite.png']}" id="rat4" />
+									<img src="#{resource['images:favorite.png']}" id="rat5" />								
+								</div>
+
+							</td>
+						</tr>
+					</table>
+					<div class="div_addButton" style="margin-top:20px;font-weight: 200;" >
+						<h:link outcome="/user/addRattingView.xhtml" value="Add you ratting"
+							rendered="#{login.isUserLogged() and !login.isUserAdmin()}" style="background-color:inherit !important;">
+							<img src="#{resource['images:ratting.png']}" alt="Add ratting" />
+						</h:link>
+					</div>
+					<div class="div_addButton"
+						style="margin-top: 20px; font-weight: 200;margin-left: 50px;">
+						<h:link outcome="/user/suggestView.xhtml" value="Suggest"
+							rendered="#{login.isUserLogged() and !login.isUserAdmin()}"
+							style="background-color:inherit !important;">
+							<img src="#{resource['images:suggest.png']}" alt="Suggest" />
+						</h:link>
+					</div>
+				</div>
+				<div class="detail_event_right">
+					<div class="detail_event_image">
+						<h:graphicImage value="#{findeventsbyword.dataEvent.picture.toBase64()}" />
+					</div>
+					<br />
+					<b><font size="3"><h:outputText value="Comments:" style="float:left;" /></font></b>						
+					<br /><br />
+					<div class="comments_event">
+
+						<h:outputText value="No comments" rendered="#{findeventsbyword.dataEvent.comments.size() == 0}" />
+						<h:dataTable width="100%" value="#{findeventsbyword.dataEvent.comments}" var="item"  border="0" first="0" frame="hsides" rules="all"  >
+							<h:column sortBy="#{item.id}">
+							
+								<div>
+									<img src="#{resource['images:message.png']}" />
+									<b><h:outputText value="#{item.user.name} " />
+									<h:outputText value="#{item.user.surname}" /></b>
+									<h:outputText value=" has commented: " style="font-weight:200;" />
+									<i><h:outputText value="#{item.text}" style="font-weight:200;color:#3A5795;" /></i>
+									<hr></hr>
+								</div>
+								
+							</h:column>
+						</h:dataTable>
+						
+					</div>
+					<br></br>
+					<div class="div_addButton">
+						<h:link outcome="/user/sendCommentView.xhtml" value="Add you comment"
+							rendered="#{login.isUserLogged() and !login.isUserAdmin()}">
+							<img src="#{resource['images:comment.png']}" alt="Add comment" />
+						</h:link>
+					</div>
+				</div>
+				<br /> <br />
+
+			</div>
+			<div class="div_addButton">
+			 	<h:link outcome="/admin/modifyEventView" value="Modify event" rendered='#{login.isUserAdmin()}' >
+			 	<img src="#{resource['images:Edit.png']}"  alt="Edit" />
+			 		<f:param name="idEvent" value="#{findeventsbyword.dataEvent.id}" />
+			 	</h:link>
+	 		</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

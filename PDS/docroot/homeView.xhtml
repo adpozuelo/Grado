@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<h:outputStylesheet>
+			
+			#liHome{
+				color:#3A5795;
+				background-color: #DF7401;
+				width:85% !important;
+			}
+		</h:outputStylesheet>
+		<div class="div_home" >
+		
+			<div class="div_home_left">
+				<div class="div_agenda_home_tile">
+					<h:link outcome="listEventsView.xhtml" >
+						<img src="#{resource['images:title.png']}" />	
+					</h:link>
+				</div>
+				<div class="div_agenda_home_fecha">
+					<h:outputText value="There is no upcoming event"  rendered="#{listevents.eventList.size() == 0}" />	
+				</div>
+				<h:dataTable value="#{listevents.eventList}" var="item" rows="1" border="0" first="0" frame="hsides" rules="all"  >
+					<h:column headerClass="td_button">	
+						
+						<h:link outcome="showEventView.xhtml" >
+							<f:param name="idEvent" value="#{item.id}" />
+							<div class="div_agenda_home_fecha">
+								from <h:outputText value="#{item.initDate.getTime()}" >
+									 <f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+								</h:outputText>
+								<br></br>
+								to <h:outputText value="#{item.endDate.getTime()}" >
+									 <f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+									<br></br>
+								</h:outputText>
+							</div>
+
+							<div class="div_agenda_home">
+								<br></br>
+								<u><h:outputText value="#{item.name}" /></u>
+								<br></br>
+								<br></br>
+								<h:outputText value="#{item.description}" />
+								<br></br>
+								<br></br>
+								<h:outputText value="Manage company: " style="color:red" />
+								<h:outputText value=" #{item.company.name}" />
+								<br></br>
+								<br></br>
+								<h:outputText value="Address: " style="color:red" />
+								<h:outputText value=" #{item.address.street} " />
+								<h:outputText value=" #{item.address.zipCode} " />
+								<h:outputText value=" #{item.address.city} " />
+								<br></br>
+								<br></br>
+								<h:outputText value="Country: " style="color:red" />
+								<h:outputText value="#{item.address.country}" />
+								<br></br>
+								<h:outputText value="State: " style="color:red" />
+								<h:outputText value="#{item.address.state}" />
+							</div>
+							<div class="div_agenda_home_foto">
+								<img src="#{resource['images:recorte.png']}" class="img_home"  />
+								<h:graphicImage value="#{item.picture.toBase64()}" class="img_event_home" />
+								
+							</div>				
+						</h:link>		
+		 			</h:column>
+		 		</h:dataTable>
+				<img src="#{resource['images:cuaderno.png']}" class="img_home"  />		
+			</div>
+			<div class="div_home_right">
+				<h:dataTable value="#{listevents.eventList}" var="item" rows="3" border="0" first="1" frame="hsides" rules="all"  >
+					<h:column headerClass="td_button">	
+						<h:link outcome="showEventView.xhtml" >
+							<f:param name="idEvent" value="#{item.id}" />
+							<div class="text_posit">
+								<p class="postit_name"> <h:outputText value="#{item.name}" /></p>
+								<p class="postit_dates"> from 
+									<h:outputText value="#{item.initDate.getTime()}">
+										<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+									</h:outputText>  
+								</p>
+								<p class="postit_dates"> to
+									<h:outputText value="#{item.endDate.getTime()}"> 
+										<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+									</h:outputText>  
+								</p>
+							</div>
+							<img src="#{resource['images:post-it.png']}" width="200px" />					
+						</h:link>		
+		 			</h:column>
+		 		</h:dataTable>
+			</div>
+			
+		</div>
+			
+	</ui:define>
+</ui:composition>
+</html>

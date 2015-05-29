@@ -1,0 +1,86 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<context-param>
+		<description>
+			Define the value returned by Application.getProjectStage(). Allowed values: Production, Development, 
+			UnitTest, SystemTest, Extension. Default value is Production.
+		</description>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Production</param-value>
+	</context-param>
+
+	<!-- Definir este parámetro es más cómodo y más visual que usar el <ui:remove> de Facelets. -->
+	<context-param>
+		<description>Do not render comments in facelets (xhtml) pages. Default is false.</description>
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+    <param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
+    <param-value>true</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+		<multipart-config>
+    		<location>/tmp</location>
+    		<max-file-size>20848820</max-file-size>
+    		<max-request-size>418018841</max-request-size>
+    		<file-size-threshold>1048576</file-size-threshold>
+		</multipart-config>			
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+	
+    <!-- The Welcome File List -->
+    <welcome-file-list>
+    	<welcome-file>homeView.xhtml</welcome-file>
+    </welcome-file-list>
+
+
+	<!-- Protected area definition -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Restricted Area - ADMIN Only</web-resource-name>
+			<url-pattern>/admin/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>A</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Restricted Area - USER and ADMIN</web-resource-name>
+			<url-pattern>/user/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>U</role-name>
+			<role-name>A</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<!-- Login page -->
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/loginView.xhtml</form-login-page>
+			<form-error-page>/errors/loginErrorView.xhtml</form-error-page>
+		</form-login-config>
+	</login-config>
+
+	<!-- System roles -->
+	<security-role>
+		<role-name>A</role-name>
+	</security-role>
+	<security-role>
+		<role-name>U</role-name>
+	</security-role>
+</web-app>

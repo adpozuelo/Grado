@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/headerView.xhtml">
+	<ui:define name="content">
+			<h:outputStylesheet>
+				
+				#liCompanies{
+					color:#3A5795;
+					background-color: #DF7401;
+					width:85% !important;
+				}
+			</h:outputStylesheet>
+			  
+		<h:form>
+ 			<div align="center" style="text-align: center;">
+ 				<div align="center" class="div_insert">
+					<table border="0" width="70%" id="table1" class="table_insert"  >
+						<tr>
+							<td width="125"  style="padding: 10px">
+								<b>Name:</b>
+							</td>
+							<td  style="padding: 10px">
+								<h:inputText maxlength="20" name ="name" id="txtname" value="#{addcompany.name}" required="true" requiredMessage="you must enter a name" />
+								<h:message for="txtname" styleClass="controlErrors" style="color:red;" />
+							</td>
+						</tr>
+						<tr>
+							<td  width="125"  style="padding: 10px">
+								<b>Admin User:</b>
+							</td>
+							<td style="padding: 10px">
+		
+								<h:selectOneMenu value="#{addcompany.nif}" id="cmbUsers"  immediate="true" required="true" requiredMessage="you must enter a admin user">
+					 				<f:selectItems value="#{listsuperusers.superUserList}" />        
+					 			</h:selectOneMenu> 
+					 			<h:message for="cmbUsers" styleClass="controlErrors" style="color:red;" />
+							</td>
+						</tr>
+					</table> 
+					<p align="center">
+						<h:commandButton value="Add company" action="#{addcompany.addCompany}" />
+					</p>
+				</div>
+			
+				
+			</div> 	
+ 		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

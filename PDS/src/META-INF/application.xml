@@ -1,0 +1,13 @@
+<application>
+  <display-name>eAgenda</display-name>
+  <module>
+    <web>
+      <web-uri>eAgenda.war</web-uri>
+      <context-root>/eAgenda</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>eAgenda.jar</ejb>
+  </module>
+</application>
+

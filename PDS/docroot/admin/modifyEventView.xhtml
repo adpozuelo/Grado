@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<f:metadata>
+	<f:viewParam name="idEvent" value="#{modifyevent.idEvent}" />
+</f:metadata>
+<ui:composition template="/headerView.xhtml">
+	<ui:define name="content">
+		<h:outputStylesheet>
+				#liEvents{
+					color:#3A5795;
+					background-color: #DF7401;
+					width:85% !important;
+				}
+			</h:outputStylesheet>
+		<h:form enctype="multipart/form-data">
+			<div align="center" class="div_insert"
+				style="font-size: 1em !important;">
+				<table border="1" width="80%" id="table1">
+					<tr>
+						<td>
+							<p align="left" /> <b>Name:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText
+								value="#{modifyevent.dataEvent.name}" id="txtname"
+								required="true" maxlength="50"
+								requiredMessage="you must enter a name" /> <h:message
+								for="txtname" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Description:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputTextarea name="description"
+								id="txtdescription" maxlength="300"
+								value="#{modifyevent.dataEvent.description}" required="true"
+								requiredMessage="you must enter a description" /> <h:message
+								for="txtdescription" styleClass="controlErrors"
+								style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Picture (max. size 4MB):</b>
+						</td>
+						<td>
+							<div class="div_update_event_picture">
+								<img src="#{modifyevent.dataEvent.picture.toBase64()}"
+									id="imgUpdateEvent" /> <img src="#{resource['images:ok.png']}"
+									id="imgUpdateEventOK"
+									style="display: none; vertical-align: middle;" /> <img
+									src="#{resource['images:error.png']}" id="imgUpdateEventError"
+									style="display: none; vertical-align: middle;" />
+								<h:inputFile value="#{modifyevent.picturePart}"
+									onchange="ChangeImage(this);" />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>KeyWords (separated by commas):</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText value="#{modifyevent.keywords}"
+								name="keywords" id="txtkeywords" required="true" maxlength="300"
+								requiredMessage="you must enter a keywords" /> <h:message
+								for="txtkeywords" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<p align="left" /> <b>Street:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="street" id="txtstreet"
+								value="#{modifyevent.dataEvent.address.street}" required="true"
+								maxlength="50" requiredMessage="you must enter a street" /> <h:message
+								for="txtstreet" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>City:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="city" id="txtcity"
+								value="#{modifyevent.dataEvent.address.city}" required="true"
+								maxlength="50" requiredMessage="you must enter a city" /> <h:message
+								for="txtcity" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>State:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="state" id="txtstate"
+								value="#{modifyevent.dataEvent.address.state}" required="true"
+								maxlength="50" requiredMessage="you must enter a state" /> <h:message
+								for="txtstate" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Zipcode:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="zipcode" id="txtzipcode"
+								value="#{modifyevent.dataEvent.address.zipCode}" required="true"
+								maxlength="50" requiredMessage="you must enter a zip code" /> <h:message
+								for="txtzipcode" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Country:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="country" id="txtcountry"
+								value="#{modifyevent.dataEvent.address.country}" required="true"
+								maxlength="50" requiredMessage="you must enter a country" /> <h:message
+								for="txtcountry" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Initial date (dd/MM/yyyy HH:mm):</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="initDate" id="txtinitdate"
+								value="#{modifyevent.initDate}" required="true" maxlength="16"
+								requiredMessage="you must enter a date">
+								<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+							</h:inputText> <h:message for="txtinitdate" styleClass="controlErrors"
+								style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>End date (dd/MM/yyyy HH:mm):</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="endDate" id="txtenddate"
+								value="#{modifyevent.endDate}" required="true" maxlength="16"
+								requiredMessage="you must enter a date">
+								<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+							</h:inputText> <h:message for="txtenddate" styleClass="controlErrors"
+								style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-top: 10px"><b>Company:</b></td>
+						<td style="padding-top: 10px"><h:selectOneMenu
+								value="#{modifyevent.dataEvent.company.id}" immediate="true">
+								<f:selectItems value="#{listcompanies.companyListItems}" />
+							</h:selectOneMenu></td>
+					</tr>
+					<tr>
+						<td style="padding-top: 10px"><b>Admin User:</b></td>
+						<td style="padding-top: 10px"><h:selectOneMenu
+								value="#{modifyevent.dataEvent.superuser.nif}" immediate="true">
+								<f:selectItems value="#{listsuperusers.superUserList}" />
+							</h:selectOneMenu></td>
+					</tr>
+				</table>
+				<p align="center">
+					<h:commandButton value="Update event"
+						action="#{modifyevent.start(modifyevent.dataEvent)}"
+						style="margin:0;" />
+				</p>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

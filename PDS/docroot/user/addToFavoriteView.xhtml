@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<f:metadata>
+	<f:viewParam name="idEvent" value="#{addtofavorites.idEvent}" />
+</f:metadata>
+<ui:composition template="/headerView.xhtml">
+	<ui:define name="content">
+				<h:outputStylesheet>
+				
+				#liEvents{
+					color:#3A5795;
+					background-color: #DF7401;
+					width:85% !important;
+				}
+			</h:outputStylesheet>
+		<h:form>
+			<div class="div_detail">
+				<table border="1" width="50%" id="table1">
+					<tr>
+						<td width="155">
+							<p align="left" /> <b><font size="3">Name:</font></b>
+						</td>
+						<td>
+							<p align="left" /> <h:outputText
+								value="#{addtofavorites.dataEvent.name}" />
+						</td>
+					</tr>
+					<tr>
+						<td width="155">
+							<p align="left" /> <b><font size="3">Description:</font></b>
+						</td>
+						<td>
+							<p align="left" /> <h:outputText
+								value="#{addtofavorites.dataEvent.description}" />
+						</td>
+					</tr>
+
+					<tr>
+						<td width="155">
+							<p align="left" /> <b><font size="3">Init
+									date:</font></b>
+						</td>
+						<td>
+							<p align="left" /> <h:outputText
+								value="#{addtofavorites.dataEvent.initDate.getTime()}" />
+						</td>
+					</tr>
+					<tr>
+						<td width="155">
+							<p align="left" /> <b><font size="3">End
+									date:</font></b>
+						</td>
+						<td>
+							<p align="left" /> <h:outputText
+								value="#{addtofavorites.dataEvent.endDate.getTime()}" />
+						</td>
+					</tr>
+					<tr>
+						<td width="155">
+							<p align="left" /> <b><font size="3">Street:</font></b>
+						</td>
+						<td>
+							<p align="left" /> <h:outputText
+								value="#{addtofavorites.dataEvent.address.street}" />
+						</td>
+					</tr>
+					<tr>
+						<td width="155">
+							<p align="left" /> <b><font size="3">City:</font></b>
+						</td>
+						<td>
+							<p align="left" /> <h:outputText
+								value="#{addtofavorites.dataEvent.address.city}" />
+						</td>
+					</tr>
+					<tr>
+						<td width="155">
+							<p align="left" /> <b><font size="3">Country:</font></b>
+						</td>
+						<td>
+							<p align="left" /> <h:outputText
+								value="#{addtofavorites.dataEvent.address.country}" />
+						</td>
+					</tr>
+					<tr>
+						<td width="155">
+							<p align="left" /> <b><font size="3">State:</font></b>
+						</td>
+						<td>
+							<p align="left" /> <h:outputText
+								value="#{addtofavorites.dataEvent.address.state}" />
+						</td>
+					</tr>
+					<tr>
+						<td width="155">
+							<p align="left" /> <b><font size="3">Zipcode:</font></b>
+						</td>
+						<td>
+							<p align="left" /> <h:outputText
+								value="#{addtofavorites.dataEvent.address.zipCode}" />
+						</td>
+					</tr>
+				</table>
+
+				<br></br> <br></br>
+
+			</div>
+			<p align="center">
+				<h:commandButton value="Accept"
+					action="#{addtofavorites.start(addtofavorites.idEvent)}"
+					class="button_submit" />
+			</p>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

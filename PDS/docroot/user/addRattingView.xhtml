@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<f:metadata>
+	<f:viewParam name="idEvent" value="#{eventshow.idEvent}" />
+</f:metadata>
+<ui:composition template="/headerView.xhtml">
+	<ui:define name="content">
+		<h:outputStylesheet>
+				
+				#liEvents{
+					color:#3A5795;
+					background-color: #DF7401;
+					width:85% !important;
+				}
+			</h:outputStylesheet>
+		<h:form>
+			<div align="center" style="text-align: center;">
+				<div align="center" class="div_insert">
+					<table border="0" width="70%" id="table1" class="table_insert">
+						<tr>
+							<td colspan="2"><br /> <br /> <br />&nbsp; &nbsp;
+								&nbsp;&nbsp;&nbsp;
+								<center>Add a Ratting for the Event.</center>
+								<br />&nbsp;&nbsp;&nbsp;&nbsp;
+								<center>(Ratting can be between 1 and 5)</center>
+								<br /> <br /> <br /> <br /></td>
+						</tr>
+						<tr>
+							<td width="125" style="padding: 10px"><b>Ratting:</b></td>
+							<td style="padding: 10px"><h:inputText id="ratting" size="5"
+									value="#{addratting.ratting}"
+									validator="#{addratting.validate}" style="text-align:right" /></td>
+						</tr>
+						<tr>
+							<td colspan="2" style="padding: 20px"><b><h:message
+										for="ratting" style="color:red" /></b></td>
+						</tr>
+					</table>
+					<p align="center">
+						<h:commandButton value="Accept"
+							action="#{addratting.start(eventshow.idEvent, addratting.ratting)}"
+							class="button_submit" />
+					</p>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<f:metadata>
+	<f:viewParam name="idEvent" value="#{eventshow.idEvent}" />
+</f:metadata>
+<ui:composition template="/headerView.xhtml">
+	<ui:define name="content">
+		<h:outputStylesheet>
+				
+				#liEvents{
+					color:#3A5795;
+					background-color: #DF7401;
+					width:85% !important;
+				}
+			</h:outputStylesheet>
+		<h:form>
+			<div align="center" style="text-align: center;">
+				<div align="center" class="div_insert">
+					<div align="center" class="selection_categories">
+						<p align="center" />
+						<h:outputText value="#{eventshow.dataEvent.name}" />
+						<br></br> <br></br>
+						<h:selectManyListbox value="#{addcategorytoevent.categories}"
+							immediate="true" required="true" id="txtname"
+							requiredMessage="select at least one category"
+							rendered='#{listcategories.categoryListItems.size() gt 0}'>
+							<h:message for="txtname" styleClass="controlErrors"
+								style="color:red;" />
+							<f:selectItems value="#{listcategories.categoryListItems}"
+								var="category" itemValue="#{category.id}"
+								itemLabel="#{category.name}">
+							</f:selectItems>
+						</h:selectManyListbox>
+						<div>
+							<p>
+								<h:outputText value="You must add at least one category first"
+									rendered='#{listcategories.categoryListItems.size() lt 1}'></h:outputText>
+							</p>
+						</div>
+					</div>
+					<p align="center">
+						<h:commandButton value="Acept"
+							rendered='#{listcategories.categoryListItems.size() gt 0}'
+							action="#{addcategorytoevent.start(eventshow.idEvent)}"
+							class="button_submit" />
+					</p>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<h:form>
+			<div align="center" class="div_insert">
+				<table width="80%" id="table1">
+					<tr>
+						<td>
+							<p align="left" /> <b>NIF:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="nif" id="txtnif"
+								value="#{register.nif}" required="true"
+								requiredMessage="you must enter a NIF" maxlength="50" /> <h:message
+								for="txtnif" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Name:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="name" id="txtname"
+								value="#{register.name}" required="true"
+								requiredMessage="you must enter a name" maxlength="50" /> <h:message
+								for="txtname" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Surname:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="name" id="txtsurname"
+								value="#{register.surname}" required="true"
+								requiredMessage="you must enter a surname" maxlength="50" /> <h:message
+								for="txtsurname" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Prefered language:</b>
+						</td>
+						<td><h:selectOneMenu value="#{register.language}">
+								<f:selectItem itemValue="SPANISH" itemLabel="Spanish" />
+								<f:selectItem itemValue="ENGLISH" itemLabel="English" />
+							</h:selectOneMenu></td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Street:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="street" id="txtstreet"
+								value="#{register.street}" required="true"
+								requiredMessage="you must enter a street" maxlength="80" /> <h:message
+								for="txtstreet" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>City:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="city" id="txtcity"
+								value="#{register.city}" required="true"
+								requiredMessage="you must enter a city" maxlength="50" /> <h:message
+								for="txtcity" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>State:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="state" id="txtstate"
+								value="#{register.state}" required="true"
+								requiredMessage="you must enter a state" maxlength="50" /> <h:message
+								for="txtstate" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Zip code:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="zipcode" id="txtzipcode"
+								value="#{register.zipCode}" required="true"
+								requiredMessage="you must enter a zip code" maxlength="50" /> <h:message
+								for="txtzipcode" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Country:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="country" id="txtcountry"
+								value="#{register.country}" required="true"
+								requiredMessage="you must enter a country" maxlength="50" /> <h:message
+								for="txtcountry" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Email:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputText name="email" id="txtemail"
+								value="#{register.email}" required="true"
+								requiredMessage="you must enter a email" maxlength="50" /> <h:message
+								for="txtemail" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p align="left" /> <b>Password:</b>
+						</td>
+						<td>
+							<p align="left" /> <h:inputSecret id="txtpasswd"
+								value="#{register.password}" required="true"
+								requiredMessage="you must enter a password" maxlength="50" /> <h:message
+								for="txtpasswd" styleClass="controlErrors" style="color:red;" />
+						</td>
+					</tr>
+				</table>
+
+				<p align="center">
+					<h:commandButton value="Register" action="#{register.start()}" />
+				</p>
+
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

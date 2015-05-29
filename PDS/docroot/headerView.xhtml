@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<link rel="stylesheet" type="text/css"
+		href="/eAgenda/resources/css/eAgenda.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>eAgenda</title>
+	
+	<script type="text/javascript">
+	
+		function ChangeImage(input){
+		
+			
+			var imageOk=document.getElementById("imgUpdateEventOK");
+			var imageError=document.getElementById("imgUpdateEventError");
+			var imageToChange=document.getElementById("imgUpdateEvent");
+			
+			imageToChange.style.display="none";
+			
+			var split=input.value.split('.');
+			if(split[1]=="jpg")
+			{
+				
+				imageOk.style.display="inline-block";
+				imageError.style.display="none";
+			}
+			else
+			{
+				imageOk.style.display="none";
+				imageError.style.display="inline-block";
+			}
+		
+		}
+		
+		function AddImage(input){
+		
+			var imageOk=document.getElementById("imgUpdateEventOK");
+			var imageError=document.getElementById("imgUpdateEventError");
+		
+			
+			var split=input.value.split('.');
+			if(split[1]=="jpg")
+			{
+				
+				imageOk.style.display="inline-block";
+				imageError.style.display="none";
+			}
+			else
+			{
+				imageOk.style.display="none";
+				imageError.style.display="inline-block";
+			}
+				
+		}
+		
+		function loadMenu(){
+
+			var liEvents=document.getElementById("liEvents");
+			
+			if(#{login.isUserAdmin() and (listcompanies.companyList.size() == 0)}){
+
+				
+				liEvents.style.width="80%";
+				liEvents.setAttribute("class", "li_disabled");
+				
+			}
+
+			//Rattings
+			var panelrattings=document.getElementById("panelrattings");
+			var panelrattingsByCategory=document.getElementById("panelrattingsByCategory");
+			var panelrattingsByName=document.getElementById("panelrattingsByName");
+			var panelrattingsByWord=document.getElementById("panelrattingsByWord");
+			
+			
+			if(panelrattings!=null || panelrattingsByCategory!=null || panelrattingsByName!=null || panelrattingsByWord!=null){
+				
+				if(panelrattings!=null){
+					
+					var ratting=#{eventshow.ratting};
+					
+				}
+				if(panelrattingsByCategory!=null){
+					
+					var ratting=#{findeventsbycategory.ratting};
+					
+				}
+				if(panelrattingsByName!=null){
+					
+					var ratting=#{findeventsbyname.ratting};
+				}
+				if(panelrattingsByWord!=null){
+					
+					var ratting=#{findeventsbyword.ratting};
+				}
+				var rat1=document.getElementById("rat1");
+				var rat2=document.getElementById("rat2");
+				var rat3=document.getElementById("rat3");
+				var rat4=document.getElementById("rat4");
+				var rat5=document.getElementById("rat5");
+				
+				switch(ratting){
+
+					case 1:{
+						rat1.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						break;
+					}
+					case 2:{
+						rat1.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						rat2.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						break;
+					}
+					case 3:{
+						rat1.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						rat2.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						rat3.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						break;
+					}
+					case 4:{
+						rat1.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						rat2.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						rat3.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						rat4.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						break;
+					}
+					case 5:{
+						rat1.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						rat2.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						rat3.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						rat4.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						rat5.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+						break;
+					}
+				}
+
+				if(ratting > 5){
+					
+					rat1.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+					rat2.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+					rat3.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+					rat4.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+					rat5.src="/eAgenda/javax.faces.resource/ratting_full.png.xhtml?ln=images";
+				}
+			}
+		}
+	</script>
+</h:head>
+
+<h:body onload="loadMenu();">
+	<div class="div_principal">
+		<ui:insert name="top">
+			<div style="width: 100%; margin-bottom: 10px;">
+				<div class="div_title">eAgenda</div>
+				<div class="div_logo">
+
+					<a href="homeView.xhtml"><img class="logo"
+						src="#{resource['images:logo_eagenda.jpg']}" /></a>
+				</div>
+				<div class="div_redondeado"></div>
+				<div class="div_logo_right">
+
+					<a href="http://www.uoc.edu" target="_blank"> <img
+						class="logo3layers" align="right"
+						src="#{resource['images:3layers.jpg']}" />
+					</a>
+				</div>
+			</div>
+			<f:view>
+				<h:form>
+					<div align="left" class="div_welcome">
+						<img src="#{resource['images:user.png']}" />
+						<h:outputText value="Welcome " />
+						<h:outputText value="#{login.UserLogged()}" />
+						<h:outputText value=" (Administrator) "  rendered="#{login.isUserAdmin()}" />
+					</div>
+					<div align="right" class="div_login">
+						<h:commandButton value="Create super user" inmediate="true"
+							action="#{register.initSuperUser()}"
+							rendered='#{listsuperusers.superUserList.size() lt 1}' />
+						<h:link value="Login" immediate="true" outcome="/loginView.xhtml"
+							rendered='#{!login.isUserLogged()}' class="btn_login" />
+						<h:commandLink value="Logout" immediate="true"
+							action="#{logout.logout()}" rendered='#{login.isUserLogged()}'
+							class="btn_logout" />
+
+						<h:commandLink value="Register" immediate="true"
+							action="/registerView.xhtml" />
+					</div>
+					<br></br>
+
+					<div>
+
+						<div class="menu_izq">
+							<h2>
+								<h:outputText value=" eAgenda "
+									rendered='#{!login.isUserAdmin() and !login.isUserLogged()}' />
+								<h:outputText value=" Administration"
+									rendered='#{login.isUserLogged() and !login.isUserAdmin()}' />
+								<h:outputText value=" eAgenda Administration"
+									rendered='#{login.isUserAdmin()}' />
+							</h2>
+							<hr></hr>
+							<ul class="list_menu">
+
+								<li id="liHome"><h:link outcome="/homeView" value="Home">
+										<img src="#{resource['images:home.png']}" />
+									</h:link></li>
+								<li id="liFindEvents"><h:link outcome="/findEventsView" value="Find events">
+										<img src="#{resource['images:search.png']}" />
+									</h:link></li>
+								<li id="liEvents">
+								<h:link outcome="/listEventsView" value="View all events"
+										rendered='#{!login.isUserAdmin()}'>
+										<img src="#{resource['images:Eventos.png']}" />
+
+									</h:link> 
+									
+									<h:link outcome="/listEventsView" value="Manage events"
+										rendered="#{login.isUserAdmin() and (listcompanies.companyList.size() gt 0)}">
+										<img src="#{resource['images:Eventos.png']}" />
+									</h:link>
+									
+									<h:link disabled="true" outcome="/listEventsView" value="Manage events" class="link_disabled"
+										rendered="#{login.isUserAdmin() and (listcompanies.companyList.size() == 0)}">
+										<img src="#{resource['images:Eventos_disabled.png']}" />
+									</h:link>
+									</li>
+
+								<li id="liCategories"><h:link outcome="/categoryListView"
+										value="View categories" rendered='#{!login.isUserAdmin()}'>
+										<img src="#{resource['images:Categorias.png']}" />
+
+									</h:link> <h:link outcome="/categoryListView" value="Manage categories"
+										rendered='#{login.isUserAdmin()}'>
+										<img src="#{resource['images:Categorias.png']}" />
+									</h:link></li>
+
+
+								<li id="liCompanies"><h:link outcome="/user/listFavoritesView"
+										value="View favorites"
+										rendered='#{login.isUserLogged() and !login.isUserAdmin()}'>
+										<img src="#{resource['images:favorite_blanco.png']}" />
+
+									</h:link> <h:link outcome="/companiesListView" value="Manage companies"
+										rendered='#{login.isUserAdmin()}'>
+										<img src="#{resource['images:Companias.png']}" />
+									</h:link></li>
+
+							</ul>
+
+						</div>
+					</div>
+				</h:form>
+			</f:view>
+		</ui:insert>
+		<div align="center">
+			<ui:insert name="content">Content</ui:insert>
+		</div>
+	</div>
+	<div class="div_footer">
+		<p>eAgenda - Developed by 3Layers</p>
+		<p><b>Contact:</b></p>
+		<ul class="list_footer">
+			<li><a href="mailto:adpozuelo@uoc.edu">Antonio Díaz <img
+					src="#{resource['images:Mail.png']}" /></a></li>
+			<li><a href="mailto:jperezsalva@uoc.edu">Jose Antonio Pérez
+					<img src="#{resource['images:Mail.png']}" />
+			</a></li>
+			<li><a href="mailto:clozanomac@uoc.edu">Cristian Lozano <img
+					src="#{resource['images:Mail.png']}" /></a></li>
+		</ul>
+		<img class="logoeAgendaFooter" align="right"
+			src="#{resource['images:logo_eagendaTransparente.png']}" /> <img
+			class="logo3layersFooter" align="right"
+			src="#{resource['images:3layersTransparente.png']}" /> <img
+			class="logoUOCFooter" align="right"
+			src="#{resource['images:UOC.png']}" />
+	</div>
+</h:body>
+</html>
