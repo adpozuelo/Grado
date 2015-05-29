@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>E-Agenda UOC - PRA2</title>
+</h:head>
+
+<h:body>
+ <div id="layout">
+	<div id="top" class="top">
+		<ui:insert name="top">
+			<table width="100%" cellspacing="0" border="0"
+			  background="#{resource['images:bkg-topbar.gif']}">
+			  <tr>
+			    <td width="26"><img border="0" src="#{resource['images:eagenda.gif']}"/></td>  
+			  </tr>
+			</table>
+			<f:view>				
+			 <h:form>
+			  <p align="right">
+	  			<h:panelGrid columns="4"> 			
+	  				
+				</h:panelGrid>	
+			  </p>
+			 </h:form>			
+			</f:view>
+		</ui:insert>
+	</div>	
+	<div id="content">
+		<ui:insert name="content">Content</ui:insert>
+	</div>
+ </div>
+</h:body>
+</html>

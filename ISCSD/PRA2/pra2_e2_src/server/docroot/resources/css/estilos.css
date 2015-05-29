@@ -1,0 +1,285 @@
+BODY{
+}
+
+
+.estilomenu {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.estilomenu2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+
+a.estilomenu2:link {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;color: #000000;font-weight: bold;text-decoration: none}
+a.estilomenu2:visited {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;color: #000000;font-weight: bold;text-decoration: none}
+a.estilomenu2:active {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;color: #000000;font-weight: bold;text-decoration: none}
+a.estilomenu2:hover {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;color: #000000;font-weight: bold;text-decoration: none}
+
+.fecha {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+a.fecha:link {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;color: #000000;text-decoration: none}
+a.fecha:visited {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;color: #000000;text-decoration: none}
+a.fecha:active {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;color: #000000;text-decoration: none}
+a.fecha:hover {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;color: #000000;text-decoration: none}
+
+.Titulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+}
+.paginacentral {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000000;
+}
+.titulopequeno {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: bold;
+}
+
+.estilomenucabecera {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.formularios {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.listado {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+
+.estiloidiomas {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: 400;
+
+}
+
+
+
+
+
+
+
+.formulariospequeno {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: 600;
+}
+
+.rojo { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold ; color: #FF0000}
+
+
+a:link {color: #FFFFFF} 
+a:active {color: #FFFFFF} 
+a:visited {color: #FFFFFF} 
+a:hover {color: #FFFFFF} 
+
+
+.noticias1 { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; color: #FFFFFF; text-decoration:none }
+
+a.apartados:link {font-family: Verdana;color: #000000; text-decoration: none; font-size: 12px; font-size: 10px; font-weight: bold} 
+a.apartados:visited {font-family: Verdana;color: #000000; text-decoration: none; font-size: 12px; font-size: 10px; font-weight: bold} 
+a.apartados:active {font-family: Verdana;color: #000000; text-decoration: none; font-size: 12px; font-size: 10px; font-weight: bold} 
+a.apartados:hover {font-family: Verdana;color: #000000; text-decoration: none; font-size: 12px; font-size: 10px; font-weight: bold} 
+
+
+.pestanas {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold;}
+
+a.pestanas:link {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight:bold; color: #000000; text-decoration: none} 
+a.pestanas:visited {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold;color: #000000; text-decoration: none} 
+a.pestanas:active {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold;color: #000000; text-decoration: none} 
+a.pestanas:hover {font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold;color: #000000 ; text-decoration: none} 
+
+
+
+.estiloidiomas {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: 400;}
+
+a.estiloidiomas:link {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: 400;color: #000000; text-decoration: none} 
+a.estiloidiomas:visited {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: 400;color: #000000; text-decoration: none} 
+a.estiloidiomas:active {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: 400;color: #000000; text-decoration: none} 
+a.estiloidiomas:hover {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: 400;color: #000000; text-decoration: none} 
+
+
+a.estiloidiomas2:link {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: 400;color: #000000; text-decoration: underline} 
+a.estiloidiomas2:visited {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: 400;color: #000000; text-decoration: none} 
+a.estiloidiomas2:active {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: 400;color: #000000; text-decoration: underline} 
+a.estiloidiomas2:hover {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: 400;color: #000000; text-decoration: underline} 
+
+
+
+a.linknegritasubrrado:link {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: bold;color: #000000; text-decoration: underline} 	
+a.linknegritasubrrado:visited {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: bold;color: #000000; text-decoration: none} 
+a.linknegritasubrrado:active {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: bold;color: #000000; text-decoration: underline} 
+a.linknegritasubrrado:hover {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px;font-weight: bold;color: #000000; text-decoration: underline} 
+
+
+
+
+
+
+a.apartados2:link {font-family: Verdana;color:#3131D1 ; text-decoration: none; font-size: 12px; font-size: 10px; font-weight: bold} 
+a.apartados2:visited {font-family: Verdana;color: #3131D1; text-decoration: none; font-size: 12px; font-size: 10px; font-weight: bold} 
+a.apartados2:active {font-family: Verdana;color: #3131D1; text-decoration: none; font-size: 12px; font-size: 10px; font-weight: bold} 
+a.apartados2:hover {font-family: Verdana;color: #3131D1; text-decoration: none; font-size: 12px; font-size: 10px; font-weight: bold} 
+
+
+a.apartados3:link {font-family: Verdana;color:#3131D1 ; text-decoration: underline; font-size: 13px; font-size: 10px; font-weight: bold} 
+a.apartados3:visited {font-family: Verdana;color: #3131D1; text-decoration: underline; font-size: 13px; font-size: 10px; font-weight: bold} 
+a.apartados3:active {font-family: Verdana;color: #3131D1; text-decoration: underline; font-size: 13px; font-size: 10px; font-weight: bold} 
+a.apartados3:hover {font-family: Verdana;color: #3131D1; text-decoration: underline; font-size: 13px; font-size: 10px; font-weight: bold} 
+
+
+
+
+a.titulopequeno:link {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 9px;	font-weight: bold;color: #000000;text-decoration: none} 
+a.titulopequeno:visited {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 9px;	font-weight: bold;color: #000000;text-decoration: none} 
+a.titulopequeno:active {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 9px;	font-weight: bold;color: #000000;text-decoration: none} 
+a.titulopequeno:hover {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 9px;	font-weight: bold;color: #000000;text-decoration: none} 
+
+
+
+
+
+
+a.inicio:link {font-family: Verdana;color: #000000; text-decoration: none; font-size: 12px; font-size: 14px; font-weight: bold} 
+a.inicio:visited {font-family: Verdana;color: #000000; text-decoration: none; font-size: 12px; font-size: 14px; font-weight: bold} 
+a.inicio:active {font-family: Verdana;color: #000000; text-decoration: none; font-size: 12px; font-size: 14px; font-weight: bold} 
+a.inicio:hover {font-family: Verdana;color: #000000; text-decoration: none; font-size: 12px; font-size: 14px; font-weight: bold} 
+.masinfo {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 400; text-decoration: underline;}
+
+
+
+
+a.listado:link {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000;text-decoration:none}
+a.listado:visited {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000;text-decoration:none}
+a.listado:active {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000;text-decoration:none}
+a.listado:hover {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000;text-decoration:none}
+
+
+
+.carrito {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px; font-weight: bold;}
+
+
+a.carrito:link {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px; font-weight: bold;color: #000000;text-decoration:none}
+a.carrito:visited {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px; font-weight: bold;color: #000000;text-decoration:none} 
+a.carrito:active {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px; font-weight: bold;color: #000000;text-decoration:none} 
+a.carrito:hover {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px; font-weight: bold;color: #000000; text-decoration:none}
+
+
+
+.linksabajo {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;font-weight: 400;color: #666666;}
+
+a.linksabajo:link {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;font-weight: 400;color: #666666;}
+a.linksabajo:visited {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;font-weight: 400;color: #666666;} 
+a.linksabajo:active {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;font-weight: 400;color: #666666;} 
+a.linksabajo:hover {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;font-weight: 400;color: #666666;}
+
+
+
+a.masinfo:link {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 400; text-decoration: underline;color: #000000;}
+a.masinfo:visited {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 400; text-decoration: underline;color: #000000;} 
+a.masinfo:active {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 400; text-decoration: underline;color: #000000;} 
+a.masinfo:hover {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 400; text-decoration: underline;color: #000000;}.estilonoticias {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 2px;
+}
+.estilorecomanacions {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: #A0630F;
+
+}
+.estilonovetats {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: #2F2F2F;
+
+}
+.resaltado {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: #2F2F2F;
+}
+.destacado {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: #800000;
+}
+.registro {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold ; color: #000000}
+
+
+a.registro:link {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold ; color: #000000; text-decoration: none}
+a.registro:visited {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold ; color: #000000; text-decoration: none}
+a.registro:active {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold ; color: #000000; text-decoration: none}
+a.registro:hover {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold ; color: #000000; text-decoration: underline}
+
+
+
+
+.listadogris {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px; color: #939393; font-weight: bold;}
+
+a.listadogris:link {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px; color: #939393; font-weight: bold; text-decoration: none}
+a.listadogris:visited {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px; color: #939393; font-weight: bold; text-decoration: none}
+a.listadogris:active {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px; color: #939393; font-weight: bold; text-decoration: none}
+a.listadogris:hover {font-family: Verdana, Arial, Helvetica, sans-serif;	font-size: 10px; color: #939393; font-weight: bold; text-decoration: underline}
+
+
+
+
+
+.botonpeque {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: normal;
+}
+.formulariosNegrita {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+
+}
+.destacadopeque {
+
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #404040;
+}
+.listadogris {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #939393;
+	font-weight: bold;
+
+
+}
+.linklistado { font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 10px;font-weight: 400;color: #000000; }

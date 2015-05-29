@@ -1,0 +1,13 @@
+<application>
+  <display-name>PRA2</display-name>
+  <module>
+    <web>
+      <web-uri>pra2.war</web-uri>
+      <context-root>/pra2</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>pra2.jar</ejb>
+  </module>
+</application>
+

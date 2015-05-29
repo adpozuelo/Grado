@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+   <f:metadata>
+      <f:viewParam name="idCat" value="#{categorymod.idCat}"/>
+   </f:metadata>
+
+  <ui:composition template="./headerView.xhtml">
+	<ui:define name="content">
+		<br/>
+ 		<h:form>
+ 			<div align="center">
+				<table border="1" width="50%" id="table1">
+					<tr>
+						<td width="155">
+							<p align="left"/><i><b><font size="4" face="Century">Id:</font></b></i></td>
+						<td>
+							<p align="left"/><h:outputText name="dataCatId" value="#{categorymod.idCat}" />
+						</td>
+					</tr>
+					<tr>
+						<td width="155">
+							<p align="left"/><i><b><font size="4" face="Century">Name:</font></b></i>
+						</td>
+						<td>
+							<p align="left"/><h:inputText name="dataCatName" value="#{categorymod.catName}" />
+						</td>
+					</tr>
+					<tr>
+						<td width="155">
+							<p align="left"/><i><b><font size="4" face="Century">Description:</font></b></i>
+						</td>
+						<td>
+							<p align="left"/><h:inputText name ="dataCatDescription" value="#{categorymod.catDescription}" />
+						</td>
+					</tr>
+					</table> 
+					
+			<p align="center">
+					<h:commandLink value="Submit" action="homeView" />
+			</p>
+			<p align="center">
+					<h:commandButton value="Return" action="homeView" />
+			</p>	
+			</div> 	
+ 		</h:form>
+	</ui:define>
+  </ui:composition>
+</html>
